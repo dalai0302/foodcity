@@ -11,17 +11,20 @@ import {
 } from "../../app/appConst";
 import ErrorManager from "../../utility/ErrorManager";
 import { Link } from "react-router-dom";
+import FoodcityPagination from "../../components/foodcity/FoodcityPagination";
 
 const ShopList = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
-  const [dropdownItems, setDropdownItems] = useState<CategorySearchBean[]>([]);
+  const [dropdownItems, setDropdownItems] = useState<CategorySearchData>(
+    {} as CategorySearchData
+  );
   const [subItems, setSubItems] = useState<CategorySearchBean[]>([]);
 
   useEffect(() => {
     categorySearchList({
       id: 1,
-      offSet: 100,
+      offSet: 3,
       name: "",
       currentPage: 0,
     });
@@ -31,7 +34,7 @@ const ShopList = () => {
     try {
       const response = await categorySearch(req);
       if (response.status === RESPONSE_SUCCESS) {
-        setDropdownItems(response.data.beans);
+        setDropdownItems(response.data);
       }
     } catch (error) {
       ErrorManager.handleRequestError(error);
@@ -120,20 +123,21 @@ const ShopList = () => {
       <section className="wow fadeIn blog-full-width-section">
         <div className="container">
           <div className="row blog-full-width no-margin xs-no-padding">
-            {dropdownItems.at(0)?.subCategories!.map((item, idx) => (
+            {dropdownItems.beans?.at(0)?.subCategories!.map((item, idx) => (
               <div
                 className="col-md-3 col-sm-6 col-xs-6 blog-listing wow fadeInUp"
                 data-wow-duration="300ms"
               >
                 <Link to={`/shop/${item.id}`}>
-                  <div className="">
+                  <div className="max-w-[225px] h-[225px] ">
                     <img
+                      className="w-full md:w-[225px] object-cover object-center"
                       src={`${URL_BACKEND_CATEGORY_FILE}/${item.logoSm}`}
                       alt=""
                     />
                   </div>
                   <div className="blog-details">
-                    <div className="blog-title">{item.name}</div>
+                    <div className="blog-title text-lg font-semibold">{item.name}</div>
 
                     <div className="separator-line bg-black no-margin-lr"></div>
                   </div>
@@ -144,19 +148,20 @@ const ShopList = () => {
           <div className="row no-margin">
             <div className="col-md-12 col-sm-12 col-xs-12 wow fadeInUp">
               <div className="pagination">
-                <a href="#">
-                  <img src={"images/arrow-pre-small.png"} alt="" />
-                </a>
-                <a href="#" className="active">
-                  1
-                </a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#">
-                  <img src="images/arrow-next-small.png" alt="" />
-                </a>
+               
+                <FoodcityPagination
+                  onClick={(page: number) => {
+                    // getNft(1, page);
+                    categorySearch({
+                      currentPage: page,
+                      id: 1,
+                      offSet: 3,
+                      name: "",
+                    });
+                  }}
+                  totalPage={dropdownItems.totalPage}
+                  currentPage={dropdownItems.currentPage}
+                />
               </div>
             </div>
           </div>

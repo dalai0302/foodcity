@@ -32,6 +32,8 @@ const Header = () => {
   const headerRef = useRef<HTMLDivElement>(null);
   const [menuItem, setMenuItem] = useState<CategoryTopData[]>([]);
 
+  const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
+
   useEffect(() => {
     getCategoryTopList();
   }, []);
@@ -72,17 +74,16 @@ const Header = () => {
 
   return (
     <header
-      className="shadow-md bg-white font-[sans-serif] tracking-wide z-50 top-0 w-full"
-      style={{ marginTop: sticky.offset }}
+      className="shadow-md bg-white tracking-wide z-50 top-0 w-full"
+      // style={{ marginTop: sticky.offset }}
     >
       <section className="flex items-center flex-wrap lg:justify-center gap-4 py-3 sm:px-10 px-4 border-gray-200 border-b min-h-[75px]">
         <div className="left-10 absolute z-50 bg-gray-100 flex px-4 py-3 rounded max-lg:hidden"></div>
-
         <Link to={"/"}>
           <img
             src={window.location.origin + "/img/logo.png"}
             alt="logo"
-            className="md:w-[100px] w-36"
+            className="md:w-[120px] w-36"
           />
         </Link>
 
@@ -97,13 +98,19 @@ const Header = () => {
         <div
           id="collapseMenu"
           className={clsx(
-            " max-lg:before:opacity-40 max-lg:before:inset-0 max-lg:before:z-50",
+            " max-lg:before:opacity-40 max-lg:before:inset-0 max-lg:before:z-50 container mx-auto ",
             sticky.isSticky ? " sticky z-50" : ""
           )}
         >
           <button
             id="toggleClose"
-            className="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3"
+            className={clsx(
+              "lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3",
+              isOpenMenu ? "hidden" : "fixed"
+            )}
+            onClick={() => {
+              setIsOpenMenu(!isOpenMenu);
+            }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +128,15 @@ const Header = () => {
             </svg>
           </button>
 
-          <ul className="lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-2/3 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
+          <ul
+            className={clsx(
+              "lg:flex lg:gap-x-16 justify-center max-lg:space-y-3  max-lg:fixed max-lg:bg-white max-lg:w-2/3 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 !px-0 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50",
+              // isOpenMenu && "!hidden"
+            )}
+            onClick={() => {
+              setIsOpenMenu(!isOpenMenu);
+            }}
+          >
             <li className="max-lg:border-b max-lg:pb-4 px-3 lg:hidden">
               <Link to={"/"}>
                 <img
@@ -131,12 +146,18 @@ const Header = () => {
                 />
               </Link>
             </li>
+            <Link
+              to={"/about"}
+              className="hover:text-[#007bff] text-black font-normal block !text-lg uppercase"
+            >
+              Тухай
+            </Link>
             {menuItem.map((item, idx) => {
               switch (item.name) {
                 case "Дэлгүүр":
                   return (
                     <Link
-                      className="hover:text-[#007bff] text-gray-600 font-semibold text-[15px] block"
+                      className="hover:text-[#007bff] text-black font-normal block !text-lg uppercase"
                       to={`/shop`}
                     >
                       {item.name}
@@ -145,7 +166,7 @@ const Header = () => {
                 case "Хөтөч":
                   return (
                     <Link
-                      className="hover:text-[#007bff] text-gray-600 font-semibold text-[15px] block"
+                      className="hover:text-[#007bff] text-black font-normal block !text-lg uppercase"
                       to={`/guide`}
                     >
                       {item.name}
@@ -154,7 +175,7 @@ const Header = () => {
                 case "Эвент":
                   return (
                     <Link
-                      className="hover:text-[#007bff] text-gray-600 font-semibold text-[15px] block"
+                      className="hover:text-[#007bff] text-black font-normal block !text-lg uppercase"
                       to={`/event`}
                     >
                       {item.name}
@@ -163,7 +184,7 @@ const Header = () => {
                 case "Брэнд":
                   return (
                     <Link
-                      className="hover:text-[#007bff] text-gray-600 font-semibold text-[15px] block"
+                      className="hover:text-[#007bff] text-black font-normal block !text-lg uppercase"
                       to={`/brands`}
                     >
                       {item.name}
@@ -171,17 +192,16 @@ const Header = () => {
                   );
               }
             })}
-
-            <Link
-              to={"/about"}
-              className="hover:text-[#007bff] text-gray-600 font-semibold text-[15px] block"
-            >
-              Тухай
-            </Link>
           </ul>
         </div>
 
-        <div id="toggleOpen" className="flex ml-auto lg:hidden">
+        <div
+          id="toggleOpen"
+          className="flex ml-auto lg:hidden"
+          onClick={() => {
+            setIsOpenMenu(!isOpenMenu);
+          }}
+        >
           <button>
             <svg
               className="w-7 h-7"
@@ -232,7 +252,7 @@ const Header = () => {
     //         {/* <button
     //           data-collapse-toggle="mobile-menu-2"
     //           type="button"
-    //           className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+    //           className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-black"
     //           aria-controls="mobile-menu-2"
     //           aria-expanded="false"
     //         >

@@ -122,7 +122,7 @@ const Guide = () => {
             {categoryItemList.at(0)?.subCategories!.map(
               (item, idx) =>
                 item.level === menu && (
-                  <div className="col-md-3 col-sm-6 wow fadeIn" data-wow-duration="300ms">
+                  <div className="col-md-3 col-sm-6 wow fadeIn mb-6" data-wow-duration="300ms">
                     <div className="blog-image">
                       <img
                         className="!xl:min-h-[212.5px] !min-h-[265.75px]"

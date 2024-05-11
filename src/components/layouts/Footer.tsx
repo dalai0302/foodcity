@@ -52,6 +52,12 @@ const Footer = () => {
             <h5>
               <Link to="/about">Бидний тухай</Link>
             </h5>
+            <h5>
+              <Link to="/about">Ажлын байр</Link>
+            </h5>
+            <h5>
+              <Link to="/about">Талбай түрээс</Link>
+            </h5>
           </div>
           <div className="col-md-2 col-sm-3 col-xs-4  footer-link3">
             <h5>

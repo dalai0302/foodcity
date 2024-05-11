@@ -47,7 +47,7 @@ const appName: string = "Food city";
 
 root.render(
   <AppContext.Provider value={appName}>
-    {/* <HelmetProvider> */}
+    <HelmetProvider>
       <BrowserRouter>
         <ScrollToTop>
           <Routes>
@@ -63,7 +63,7 @@ root.render(
           </Routes>
         </ScrollToTop>
       </BrowserRouter>
-    {/* </HelmetProvider> */}
+    </HelmetProvider>
   </AppContext.Provider>
 );
 

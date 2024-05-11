@@ -24,6 +24,7 @@ import { CategorySearchBean } from "../../model/CategorySearchResponseDto";
 import ErrorManager from "../../utility/ErrorManager";
 import { BrandBean } from "../../model/BrandSearchResponseDto";
 import { BrandSearchRequestDto } from "../../model/BrandSearchRequestDto";
+import ReactPlayer from "react-player";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -32,6 +33,7 @@ const Home = () => {
     []
   );
   const [brandItemList, setBrandItemList] = useState<BrandBean[]>([]);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     categorySearchShopList({
@@ -72,6 +74,84 @@ const Home = () => {
 
   const lastThreeItems = latestShopList.at(0)?.subCategories?.slice(-3);
 
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const dropDownRender = () => {
+    return (
+      <div className="relative block text-center z-50">
+        <div className="w-72">
+          <button
+            type="button"
+            className="inline-flex justify-center w-full border border-black shadow-sm bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-gray-100"
+            id="options-menu"
+            aria-haspopup="true"
+            aria-expanded="true"
+            onClick={toggleDropdown}
+          >
+            Options
+            {/* Change the text above to your dropdown title */}
+            <svg
+              className="-mr-1 ml-2 h-5 w-5"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+
+        {isOpen && (
+          <div
+            className="origin-top-right absolute right-0 mt-2 w-72 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="options-menu"
+          >
+            <div className="py-1" role="none">
+              <a
+                href="#"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                role="menuitem"
+              >
+                Option 1
+              </a>
+              <a
+                href="#"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                role="menuitem"
+              >
+                Option 1
+              </a>
+              <a
+                href="#"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                role="menuitem"
+              >
+                Option 1
+              </a>
+              <a
+                href="#"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                role="menuitem"
+              >
+                Option 1
+              </a>
+              {/* Add more options here */}
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  };
+
   return (
     <div>
       <section className="pt-0">
@@ -100,7 +180,6 @@ const Home = () => {
               src={window.location.origin + "/img/bg3.jpg"}
             />
           </SwiperSlide>
-
           <SwiperSlide>
             <img
               className="w-full md:h-[800px] object-cover"
@@ -112,22 +191,29 @@ const Home = () => {
       <section className="!p-0">
         <div className="container">
           <div className="row">
+            <div className="col-md-12 text-center">
+              <h3 className="section-title">Брэндүүд</h3>
+            </div>
+          </div>
+          <div className="row">
+            <div className="flex justify-center mb-4">{dropDownRender()}</div>
             <Swiper
               slidesPerView={3}
-              grid={{
-                rows: 1,
-              }}
+              // grid={{
+              //   rows: 1,
+              // }}
               spaceBetween={50}
+              navigation
               pagination={{
                 clickable: true,
               }}
-              modules={[Grid]}
+              modules={[Navigation]}
               className="mySwiper"
             >
               {brandItemList.map((item, idx) => (
-                <SwiperSlide className="grid__slide !w-[200px]">
+                <SwiperSlide className="grid__slide !w-[200px] border-[1px] border-solid border-black cursor-grabbing">
                   <img
-                    className="w-[200px] mb-6"
+                    className="!w-[200px] !h-[200px] object-center object-contain p-2 m-0"
                     src={`${URL_BACKEND_CATEGORY_FILE}/${item.logoMd}`}
                   />
                 </SwiperSlide>
@@ -147,6 +233,34 @@ const Home = () => {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="!pb-0">
+        {/* <ReactPlayer
+          url={window.location.origin + "/video/sample-5s.mp4"}
+          width="1920px"
+          height="500px"
+          // controls={true}
+          playing={true}
+          // playIcon={<button></button>}
+          // light="https://i.stack.imgur.com/zw9Iz.png"
+        /> */}
+        <div className="relative flex items-center justify-center w-full h-[800px] overflow-hidden">
+          <div className="relative z-30 p-5 text-2xl text-white  bg-opacity-50 rounded-xl"></div>
+          <video
+            // autoplay={true}
+            autoPlay
+            loop
+            // controls
+            muted
+            className="absolute z-10 w-auto min-w-full min-h-full max-w-none"
+          >
+            <source
+              src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </section>
       <section id="blog" className="wow fadeIn">

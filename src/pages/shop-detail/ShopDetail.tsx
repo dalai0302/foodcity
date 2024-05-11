@@ -215,7 +215,7 @@ const ShopDetail = () => {
       <section className="wow fadeIn blog-full-width-section">
         <div className="container">
           <div className="row blog-full-width no-margin xs-no-padding">
-            {dropdownItems.at(0)?.subCategories!.map((item, idx) => (
+            {dropdownItems.at(0)?.subCategories !== null && dropdownItems.at(0)?.subCategories!.map((item, idx) => (
               <div
                 className="col-md-3 col-sm-6 col-xs-6 blog-listing wow fadeInUp"
                 data-wow-duration="300ms"
