@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { getCategoryList } from "../../service/shopApiClient";
 import { RESPONSE_SUCCESS } from "../../app/appConst";
 import { CategoryTopData } from "../../model/CategoryTopListResponseDto";
+import LanguageSelector from "../languageSelector/LanguageSelector";
 
 // export const menuItemsData = [
 //   {
@@ -26,7 +27,7 @@ let timeout: any;
 let scroll = 0;
 
 const Header = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("global");
 
   const [sticky, setSticky] = useState({ isSticky: false, offset: 0 });
   const headerRef = useRef<HTMLDivElement>(null);
@@ -49,68 +50,71 @@ const Header = () => {
     }
   }
 
-  // handle scroll event
-  const handleScroll = (elTopOffset: any, elHeight: any) => {
-    if (window.scrollY > elTopOffset + elHeight) {
-      setSticky({ isSticky: true, offset: elHeight });
+  let toggleOpen = document.getElementById("toggleOpen");
+  let toggleClose = document.getElementById("toggleClose");
+  let collapseMenu = document.getElementById("collapseMenu");
+  let ulEl = document.getElementsByTagName("ul");
+
+  function handleClick() {
+    if (collapseMenu!.style.display === "block") {
+      collapseMenu!.style.display = "none";
     } else {
-      setSticky({ isSticky: false, offset: 0 });
+      collapseMenu!.style.display = "block";
     }
-  };
+  }
+
+  if (toggleOpen !== null) {
+    toggleOpen!.addEventListener("click", handleClick);
+  }
+
+  if (toggleClose !== null) {
+    toggleClose!.addEventListener("click", handleClick);
+  }
 
   // add/remove scroll event listener
   useEffect(() => {
-    var header = headerRef!.current!.getBoundingClientRect();
-    const handleScrollEvent = () => {
-      handleScroll(header.top, header.height);
-    };
-
-    window.addEventListener("scroll", handleScrollEvent);
-
-    return () => {
-      window.removeEventListener("scroll", handleScrollEvent);
-    };
+    // var header = headerRef!.current!.getBoundingClientRect();
+    // const handleScrollEvent = () => {
+    //   handleScroll(header.top, header.height);
+    // };
+    // window.addEventListener("scroll", handleScrollEvent);
+    // return () => {
+    //   window.removeEventListener("scroll", handleScrollEvent);
+    // };
   }, []);
 
   return (
-    <header
-      className="shadow-md bg-white tracking-wide z-50 top-0 w-full"
-      // style={{ marginTop: sticky.offset }}
-    >
-      <section className="flex items-center flex-wrap lg:justify-center gap-4 py-3 sm:px-10 px-4 border-gray-200 border-b min-h-[75px]">
-        <div className="left-10 absolute z-50 bg-gray-100 flex px-4 py-3 rounded max-lg:hidden"></div>
+    <header className="shadow-md bg-white font-sans tracking-wide relative z-50">
+      <section className="flex items-center lg:justify-center flex-wrap gap-5 relative py-3 px-10 border-gray-200 border-b lg:min-h-[80px] max-lg:min-h-[60px]">
+        <div className="space-x-6 md:absolute md:left-10 hidden xl:flex items-center max-md:ml-auto text-black font-medium text-xs">
+          <a target="_blank" href="https://www.facebook.com/FoodCityMall">
+            <i className="fa fa-facebook text-black before:text-2xl"></i>
+          </a>
+          <a target="_blank" href="https://www.instagram.com/foodcitymongolia">
+            <i className="fa fa-instagram text-black before:text-2xl"></i>
+          </a>
+        </div>
         <Link to={"/"}>
           <img
-            src={window.location.origin + "/img/logo.png"}
+            src={window.location.origin + "/img/logo.jpeg"}
             alt="logo"
-            className="md:w-[120px] w-36"
+            className="md:w-[100px] w-36"
           />
         </Link>
 
-        <div className="lg:absolute lg:right-10 flex items-center ml-auto space-x-8"></div>
+        <div className="space-x-6 md:absolute md:right-10 flex items-center max-md:ml-auto ">
+          <LanguageSelector />
+        </div>
       </section>
 
-      <div
-        className="flex flex-wrap justify-center px-10 py-3 top-0"
-        id="header"
-        ref={headerRef}
-      >
+      <div className="flex flex-wrap py-3.5 px-10 overflow-x-auto">
         <div
           id="collapseMenu"
-          className={clsx(
-            " max-lg:before:opacity-40 max-lg:before:inset-0 max-lg:before:z-50 container mx-auto ",
-            sticky.isSticky ? " sticky z-50" : ""
-          )}
+          className="w-full max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50"
         >
           <button
             id="toggleClose"
-            className={clsx(
-              "lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3",
-              isOpenMenu ? "hidden" : "fixed"
-            )}
-            onClick={() => {
-              setIsOpenMenu(!isOpenMenu);
-            }}
+            className="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -128,81 +132,100 @@ const Header = () => {
             </svg>
           </button>
 
-          <ul
-            className={clsx(
-              "lg:flex lg:gap-x-16 justify-center max-lg:space-y-3  max-lg:fixed max-lg:bg-white max-lg:w-2/3 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 !px-0 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50",
-              // isOpenMenu && "!hidden"
-            )}
-            onClick={() => {
-              setIsOpenMenu(!isOpenMenu);
-            }}
-          >
-            <li className="max-lg:border-b max-lg:pb-4 px-3 lg:hidden">
-              <Link to={"/"}>
-                <img
-                  src={window.location.origin + "/img/logo.png"}
-                  alt="logo"
-                  className="w-36"
-                />
+          <ul className="lg:flex lg:justify-center uppercase lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
+            <li className="max-lg:border-b max-lg:py-3">
+              <Link
+                to={"/about"}
+                className="hover:text-[#007bff] text-black font-normal text-[15px] block"
+              >
+                {t("menu.about")}
               </Link>
             </li>
-            <Link
-              to={"/about"}
-              className="hover:text-[#007bff] text-black font-normal block !text-lg uppercase"
-            >
-              Тухай
-            </Link>
             {menuItem.map((item, idx) => {
               switch (item.name) {
                 case "Дэлгүүр":
                   return (
-                    <Link
-                      className="hover:text-[#007bff] text-black font-normal block !text-lg uppercase"
-                      to={`/shop`}
-                    >
-                      {item.name}
-                    </Link>
+                    <li className="max-lg:border-b max-lg:py-3">
+                      <Link
+                        className="hover:text-[#007bff] text-black font-normal text-[15px] block"
+                        to={`/shop`}
+                      >
+                        {t("menu.shop")}
+                      </Link>
+                    </li>
                   );
-                case "Хөтөч":
+                case "Хоол, Ресторан":
                   return (
-                    <Link
-                      className="hover:text-[#007bff] text-black font-normal block !text-lg uppercase"
-                      to={`/guide`}
-                    >
-                      {item.name}
-                    </Link>
+                    <li className="max-lg:border-b max-lg:py-3">
+                      <Link
+                        className="hover:text-[#007bff] text-black font-normal text-[15px] block"
+                        to={`/restaurant`}
+                      >
+                        {t("menu.restaurant")}
+                      </Link>
+                    </li>
                   );
                 case "Эвент":
                   return (
-                    <Link
-                      className="hover:text-[#007bff] text-black font-normal block !text-lg uppercase"
-                      to={`/event`}
-                    >
-                      {item.name}
-                    </Link>
+                    <li className="max-lg:border-b max-lg:py-3">
+                      <Link
+                        className="hover:text-[#007bff] text-black font-normal text-[15px] block"
+                        to={`/event`}
+                      >
+                        {t("menu.event")}
+                      </Link>
+                    </li>
                   );
                 case "Брэнд":
                   return (
-                    <Link
-                      className="hover:text-[#007bff] text-black font-normal block !text-lg uppercase"
-                      to={`/brands`}
-                    >
-                      {item.name}
-                    </Link>
+                    <li className="max-lg:border-b max-lg:py-3">
+                      <Link
+                        className="hover:text-[#007bff] text-black font-normal text-[15px] block"
+                        to={`/brands`}
+                      >
+                        {t("menu.brand")}
+                      </Link>
+                    </li>
+                  );
+                case "Энтертэйнмент":
+                  return (
+                    <li className="max-lg:border-b max-lg:py-3">
+                      <Link
+                        className="hover:text-[#007bff] text-black font-normal text-[15px] block"
+                        to={`/entertainment`}
+                      >
+                        {t("menu.entertainment")}
+                      </Link>
+                    </li>
+                  );
+                case "Үйлчилгээ":
+                  return (
+                    <li className="max-lg:border-b max-lg:py-3">
+                      <Link
+                        className="hover:text-[#007bff] text-black font-normal text-[15px] block"
+                        to={`/service`}
+                      >
+                        {t("menu.service")}
+                      </Link>
+                    </li>
                   );
               }
             })}
+
+            <li className="mb-6 hidden max-lg:block">
+              <a href="">
+                <img
+                  src={window.location.origin + "/img/logo.jpeg"}
+                  alt="logo"
+                  className="w-36"
+                />
+              </a>
+            </li>
           </ul>
         </div>
 
-        <div
-          id="toggleOpen"
-          className="flex ml-auto lg:hidden"
-          onClick={() => {
-            setIsOpenMenu(!isOpenMenu);
-          }}
-        >
-          <button>
+        <div className="flex ml-auto lg:hidden">
+          <button id="toggleOpen">
             <svg
               className="w-7 h-7"
               fill="#000"
@@ -219,129 +242,6 @@ const Header = () => {
         </div>
       </div>
     </header>
-
-    // <header className="fixed top-0 w-full z-10 h-[86px]">
-    //   <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 ">
-    //     <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-    //       <Link to="/" className="flex items-center">
-    //         <img
-    //           src={window.location.origin + "/img/logo.png"}
-    //           className="mr-3 h-[86px]"
-    //           alt="Flowbite Logo"
-    //         />
-    //       </Link>
-    //       <div className="flex items-center lg:order-2">
-    //         <Link
-    //           to={"/shop"}
-    //           className="text-black uppercase bg-primary-700 hover:bg-primary-800 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
-    //         >
-    //           Shop
-    //         </Link>
-    //         <Link
-    //           to={"/brands"}
-    //           className="text-black uppercase bg-primary-700 hover:bg-primary-800 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
-    //         >
-    //           brand
-    //         </Link>
-    //         <Link
-    //           to={"/about"}
-    //           className="text-black uppercase bg-primary-700 hover:bg-primary-800 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
-    //         >
-    //           about
-    //         </Link>
-    //         {/* <button
-    //           data-collapse-toggle="mobile-menu-2"
-    //           type="button"
-    //           className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-black"
-    //           aria-controls="mobile-menu-2"
-    //           aria-expanded="false"
-    //         >
-    //           <span className="sr-only">Open main menu</span>
-    //           <svg
-    //             className="w-6 h-6"
-    //             fill="currentColor"
-    //             viewBox="0 0 20 20"
-    //             xmlns="http://www.w3.org/2000/svg"
-    //           >
-    //             <path
-    //               fill-rule="evenodd"
-    //               d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-    //               clip-rule="evenodd"
-    //             ></path>
-    //           </svg>
-    //           <svg
-    //             className="hidden w-6 h-6"
-    //             fill="currentColor"
-    //             viewBox="0 0 20 20"
-    //             xmlns="http://www.w3.org/2000/svg"
-    //           >
-    //             <path
-    //               fill-rule="evenodd"
-    //               d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-    //               clip-rule="evenodd"
-    //             ></path>
-    //           </svg>
-    //         </button> */}
-    //       </div>
-    //       <div
-    //         className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
-    //         id="mobile-menu-2"
-    //       >
-    //         <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-    //           <li>
-    //             <a
-    //               href="#"
-    //               className="block py-2 pr-4 pl-3 text-black rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 "
-    //               aria-current="page"
-    //             >
-    //               Home
-    //             </a>
-    //           </li>
-    //           <li>
-    //             <a
-    //               href="#"
-    //               className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-black lg:dark:hover:bg-transparent dark:border-gray-700"
-    //             >
-    //               Company
-    //             </a>
-    //           </li>
-    //           <li>
-    //             <a
-    //               href="#"
-    //               className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-black lg:dark:hover:bg-transparent dark:border-gray-700"
-    //             >
-    //               Marketplace
-    //             </a>
-    //           </li>
-    //           <li>
-    //             <a
-    //               href="#"
-    //               className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-black lg:dark:hover:bg-transparent dark:border-gray-700"
-    //             >
-    //               Features
-    //             </a>
-    //           </li>
-    //           <li>
-    //             <a
-    //               href="#"
-    //               className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-black lg:dark:hover:bg-transparent dark:border-gray-700"
-    //             >
-    //               Team
-    //             </a>
-    //           </li>
-    //           <li>
-    //             <a
-    //               href="#"
-    //               className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-black dark:hover:bg-gray-700 dark:hover:text-black lg:dark:hover:bg-transparent dark:border-gray-700"
-    //             >
-    //               Contact
-    //             </a>
-    //           </li>
-    //         </ul>
-    //       </div>
-    //     </div>
-    //   </nav>
-    // </header>
   );
 };
 

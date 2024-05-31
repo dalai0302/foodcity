@@ -1,4 +1,4 @@
-import trans from "../i18n/mn/translation.json";
+import trans from "../i18n/mn/translation_mn.json";
 
 export default class RefreshTokenExpError extends Error {
   message: string;

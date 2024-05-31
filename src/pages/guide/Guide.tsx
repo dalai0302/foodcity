@@ -8,6 +8,7 @@ import {
 import { CategorySearchBean } from "../../model/CategorySearchResponseDto";
 import ErrorManager from "../../utility/ErrorManager";
 import clsx from "clsx";
+import { useTranslation } from "react-i18next";
 
 enum Floor {
   FIRST = "1F",
@@ -17,6 +18,8 @@ enum Floor {
 }
 
 const Guide = () => {
+  const { t } = useTranslation("global");
+
   const [menu, setMenu] = useState<Floor>(Floor.FIRST);
   const [categoryItemList, setCategoryItemList] = useState<
     CategorySearchBean[]
@@ -48,24 +51,24 @@ const Guide = () => {
 
   return (
     <>
-      <section className=" page-title bg-gray">
+      <section className=" sm:!p-[40px] bg-gray">
         <div className="container">
           <div className="row">
             <div
               className="col-lg-8 col-md-7 col-sm-12 wow fadeInUp"
               data-wow-duration="300ms"
             >
-              <h1 className="black-text">Хөтөч</h1>
+              <h2 className="black-text pb-2 md:text-left text-center">{t("menu.guide")}</h2>
               {/* <span className="xs-display-none">
                 Lorem Ipsum is simply dummy text of the printing.
               </span> */}
-              <div className="separator-line margin-three bg-black no-margin-lr sm-margin-top-three sm-margin-bottom-three no-margin-bottom xs-display-none"></div>
+              <div className="separator-line margin-three bg-black no-margin-lr sm-margin-top-three sm-margin-bottom-three no-margin-bottom  xs-display-none"></div>
             </div>
             <div
-              className="col-lg-4 col-md-5 col-sm-12 breadcrumb !mt-0 text-uppercase sm-no-margin-top wow fadeInUp xs-display-none"
+              className="col-lg-4 col-md-5 col-sm-12 breadcrumb !mt-0 text-uppercase sm-no-margin-top wow fadeInUp"
               data-wow-duration="600ms"
             >
-              <ul className="cursor-pointer">
+              <ul className="cursor-pointer text-center">
                 <li
                   className={clsx(
                     menu === Floor.FIRST ? "!font-bold" : "",
@@ -116,28 +119,43 @@ const Guide = () => {
         </div>
       </section>
 
-      <section className="wow fadeIn">
+      <section className="wow fadeIn !pt-0 !p-[40px]">
         <div className="container">
           <div className="row lightbox-gallery">
             {categoryItemList.at(0)?.subCategories!.map(
               (item, idx) =>
                 item.level === menu && (
-                  <div className="col-md-3 col-sm-6 wow fadeIn mb-6" data-wow-duration="300ms">
-                    <div className="blog-image">
-                      <img
-                        className="!xl:min-h-[212.5px] !min-h-[265.75px]"
-                        src={`${URL_BACKEND_CATEGORY_FILE}/${item.logoMd}`}
-                        alt=""
-                      />
-                    </div>
-                    <div className="blog-details">
-                      <div className="blog-date !font-bold !text-black !text-base">
-                        {item.level}
+                  <div
+                    className="col-md-3  col-sm-6 wow fadeIn mb-6 relative group"
+                    data-wow-duration="300ms"
+                  >
+                    {/* <a href={item.url!} target="_blank"> */}
+                    {/* from-white/100 to-transparent bg-gradient-to-t */}
+                    <div className="rounded-xl z-50 w-2/3 h-1/2 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute bg-white bottom-0 left-[100px] pt-30 text-black flex items-end">
+                      <div className="h-full">
+                        <div className="transform-gpu h-full p-4 space-y-3 text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 flex items-center transform transition duration-300 ease-in-out">
+                          <div className="font-bold">
+                            {item.name} - {item.level}
+                          </div>
+                        </div>
                       </div>
-                      <div className="blog-title !text-base">{item.name}</div>
-
-                      <div className="separator-line bg-black no-margin-lr"></div>
                     </div>
+                    <img
+                      src={`${URL_BACKEND_CATEGORY_FILE}/${item.logoMd}`}
+                      alt=""
+                      className="project-img-gallery w-[256px] h-[256px] object-cover mx-auto"
+                    />
+                    <div className="blog-details p-2 md:hidden block">
+                      <h5 className=" text-center !text-lg !text-black no-margin-bottom ">
+                        {item.name} - {item.level}
+                      </h5>
+                    </div>
+                    {/* <div className="blog-details">
+                        <h5 className="margin-ten !text-lg !text-black no-margin-bottom xs-margin-top-five">
+                          {item.name} - {item.level}
+                        </h5>
+                      </div> */}
+                    {/* </a> */}
                   </div>
                 )
             )}

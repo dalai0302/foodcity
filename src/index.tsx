@@ -37,6 +37,13 @@ import BrandList from "./pages/brand/BrandList";
 import Guide from "./pages/guide/Guide";
 import Event from "./pages/event/Event";
 import ScrollToTop from "./utility/ScrollToTop";
+import { I18nextProvider } from "react-i18next";
+import config from "./i18n/config";
+import Entertaiment from "./pages/entertainment/Entertaiment";
+import Job from "./pages/job/Job";
+import ForRent from "./pages/for-rent/ForRent";
+import Restaurant from "./pages/restaurant/Restaurant";
+import Service from "./pages/service/Service";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -47,23 +54,30 @@ const appName: string = "Food city";
 
 root.render(
   <AppContext.Provider value={appName}>
-    <HelmetProvider>
-      <BrowserRouter>
-        <ScrollToTop>
-          <Routes>
-            <Route element={<App />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/shop" element={<ShopList />} />
-              <Route path="/shop/:id" element={<ShopDetail />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/brands" element={<BrandList />} />
-              <Route path="/guide" element={<Guide />} />
-              <Route path="/event" element={<Event />} />
-            </Route>
-          </Routes>
-        </ScrollToTop>
-      </BrowserRouter>
-    </HelmetProvider>
+    <I18nextProvider i18n={config}>
+      <HelmetProvider>
+        <BrowserRouter>
+          <ScrollToTop>
+            <Routes>
+              <Route element={<App />}>
+                <Route path="/" element={<Home />} />
+                <Route path="/shop" element={<ShopList />} />
+                <Route path="/shop/:id" element={<ShopDetail />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/brands" element={<BrandList />} />
+                <Route path="/guide" element={<Guide />} />
+                <Route path="/event" element={<Event />} />
+                <Route path="/entertainment" element={<Entertaiment />} />
+                <Route path="/job" element={<Job />} />
+                <Route path="/for_rent" element={<ForRent />} />
+                <Route path="/restaurant" element={<Restaurant />} />
+                <Route path="/service" element={<Service />} />
+              </Route>
+            </Routes>
+          </ScrollToTop>
+        </BrowserRouter>
+      </HelmetProvider>
+    </I18nextProvider>
   </AppContext.Provider>
 );
 

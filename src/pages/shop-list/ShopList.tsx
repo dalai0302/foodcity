@@ -12,8 +12,11 @@ import {
 import ErrorManager from "../../utility/ErrorManager";
 import { Link } from "react-router-dom";
 import FoodcityPagination from "../../components/foodcity/FoodcityPagination";
+import { useTranslation } from "react-i18next";
 
 const ShopList = () => {
+  const { t } = useTranslation("global");
+
   const [searchTerm, setSearchTerm] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
   const [dropdownItems, setDropdownItems] = useState<CategorySearchData>(
@@ -69,99 +72,72 @@ const ShopList = () => {
 
   return (
     <>
-      <section className=" page-title bg-gray">
-        <div className="container">
-          <div className="row">
-            <div
-              className="col-lg-8 col-md-7 col-sm-12 wow fadeInUp"
-              data-wow-duration="300ms"
-            >
-              <h1 className="black-text">
-                {/* {subItems.length > 0
-                  ? subItems.at(0)?.fullName
-                  : dropdownItems.at(0)?.name} */}
-                Дэлгүүр
-              </h1>
-              <span className="xs-display-none">
-                {/* Lorem Ipsum is simply dummy text of the printing. */}
-              </span>
-              <div className="separator-line margin-three bg-black no-margin-lr sm-margin-top-three sm-margin-bottom-three no-margin-bottom xs-display-none"></div>
-            </div>
-            <div className="col-md-3 col-sm-5 pull-right">
-              {/* <div className="relative">
-                <input
-                  type="text"
-                  className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
-                  placeholder="Search..."
-                  value={searchTerm}
-                  onChange={handleSearchInputChange}
-                  onFocus={() => setShowDropdown(true)}
-                />
-                {showDropdown && (
-                  <div className="absolute z-10 mt-1 w-full bg-white rounded-md shadow-lg">
-                    <div className="py-1">
-                      {dropdownItems
-                        .at(0)
-                        ?.subCategories!.map((item, index) => (
-                          <div
-                            key={index}
-                            className="px-4 py-2 cursor-pointer hover:bg-gray-100"
-                            onClick={() => handleDropdownItemClick(item.id)}
-                          >
-                            {item.name}
-                          </div>
-                        ))}
-                    </div>
-                  </div>
-                )}
-              </div> */}
+      <section className="!p-0 box-border relative ">
+        <img
+          className="w-full max-h-[500px] bg-blend-darken block"
+          src={window.location.origin + "/img/bg1.jpg"}
+          alt=""
+        />
+        <div className="overlay1 text-center text-white text-3xl"></div>
+       
+      </section>
+      {/* <div className="bg-black h-20 flex justify-center items-center">
+        <h2 className="text-center text-white font-semibold">
+          {t("menu.shop")}
+        </h2>
+      </div> */}
+
+      <section className="wow fadeIn blog-full-width-section p-2 sm:!p-[40px]">
+        <div className="mx-auto justify-center flex xl:flex-row  flex-col gap-2 sm:gap-8 p-2 xl:!p-[40px] relative">
+          <div className="relative ">
+            <div className="pb-2 sm:pb-[35px] sticky top-5">
+              <h2 className="text-center text-black font-semibold ">
+                {t("menu.shop")}
+              </h2>
+              <hr className="border-b-2 border-black" />
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="wow fadeIn blog-full-width-section">
-        <div className="container">
           <div className="row blog-full-width no-margin xs-no-padding">
             {dropdownItems.beans?.at(0)?.subCategories!.map((item, idx) => (
               <div
-                className="col-md-3 col-sm-6 col-xs-6 blog-listing wow fadeInUp"
+                className="col-md-3 col-sm-6 col-xs-6 mb-4"
                 data-wow-duration="300ms"
               >
                 <Link to={`/shop/${item.id}`}>
-                  <div className="max-w-[225px] h-[225px] ">
-                    <img
-                      className="w-full md:w-[225px] object-cover object-center"
-                      src={`${URL_BACKEND_CATEGORY_FILE}/${item.logoSm}`}
-                      alt=""
-                    />
+                  <div className="border rounded-full mx-auto w-[120px] h-[120px] sm:w-[220px] sm:h-[220px] shadow-lg">
+                    <div className="h-[120px] sm:h-[220px]">
+                      <img
+                        className="w-full md:w-full h-full object-center rounded-full"
+                        src={`${URL_BACKEND_CATEGORY_FILE}/${item.logoMd}`}
+                        alt=""
+                      />
+                    </div>
                   </div>
-                  <div className="blog-details">
-                    <div className="blog-title text-lg font-semibold">{item.name}</div>
-
-                    <div className="separator-line bg-black no-margin-lr"></div>
+                  <div className="blog-details w-full h-[60px]  text-black mt-2">
+                    <div className="blog-title text-sm sm:text-base text-center font-semibold flex items-center h-full uppercase justify-center flex-wrap">
+                      {item.name}
+                    </div>
                   </div>
                 </Link>
               </div>
             ))}
-          </div>
-          <div className="row no-margin">
-            <div className="col-md-12 col-sm-12 col-xs-12 wow fadeInUp">
-              <div className="pagination">
-               
-                <FoodcityPagination
-                  onClick={(page: number) => {
-                    // getNft(1, page);
-                    categorySearch({
-                      currentPage: page,
-                      id: 1,
-                      offSet: 3,
-                      name: "",
-                    });
-                  }}
-                  totalPage={dropdownItems.totalPage}
-                  currentPage={dropdownItems.currentPage}
-                />
+            <div className="row no-margin">
+              <div className="col-md-12 col-sm-12 col-xs-12 wow fadeInUp">
+                <div className="pagination">
+                  <FoodcityPagination
+                    onClick={(page: number) => {
+                      // getNft(1, page);
+                      categorySearch({
+                        currentPage: page,
+                        id: 1,
+                        offSet: 3,
+                        name: "",
+                      });
+                    }}
+                    totalPage={dropdownItems.totalPage}
+                    currentPage={dropdownItems.currentPage}
+                  />
+                </div>
               </div>
             </div>
           </div>

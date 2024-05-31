@@ -1,0 +1,106 @@
+{
+  "appName": "Food City",
+  "label": {
+    "home": "Home",
+    "about": "About",
+    "shop": "Shop",
+    "brands": "Brands",
+    "allBrand": "All brand",
+    "latestShop": "Latest shop",
+    "allShop": "All shop",
+    "detail": "Detail",
+    "ourService": "Our service",
+    "allCategory": "All category",
+    "year": "YEAR",
+    "introduction": "introduction"
+  },
+  "navbar": {
+    "applicationNavbar": "Application"
+  },
+  "menu": {
+    "shop": "Shop",
+    "guide": "Guide",
+    "restaurant": "Restaurant",
+    "brand": "Brand",
+    "entertainment": "Entertainment",
+    "about": "About",
+    "event": "Event",
+    "service": "Service"
+
+  },
+  "action": {
+    "continue": "Continue",
+    "check": "Check",
+    "confirmation": "Confirmation",
+    "logout": "Logout",
+    "price": "Price",
+    "exit": "Exit system"
+  },
+  "footer": {
+    "copyRight": "Copyright © 2024 FOODCITY.MN. All Rights Reserved",
+    "footerQuestionsAndAnswer": "Question and answer",
+    "about": "about us",
+    "shop": "Shop",
+    "job": "Job vacancy",
+    "forRent": "SPACE FOR RENT",
+    "shops": "shops",
+    "brand": "brand",
+    "guide": "guide",
+    "event": "event",
+    "structure": "structure",
+    "contact": "ХОЛБОО БАРИХ",
+    "social": "social link",
+    "menu": "menu",
+    "location": "ХУД 24-Р ХОРОО, НААДАМЧДЫН ГУДАМЖ, FOOD CITY MALL, УЛААНБААТАР, МОНГОЛ",
+    "time": "10:00 AM - 9:00 PM",
+    "timeTxt": "Schedule"
+  },
+  "validation": {
+    "fieldError": "Талбарын утгыг гүйцэт зөв оруулна уу",
+    "usernameError": "Хэрэглэгчийн нэр буруу байна",
+    "accountNameError": "Эзэмшигчийн нэр буруу байна",
+    "accountNumberError": "Дансны дугаар буруу байна",
+    "passwordError": "Нууц үг буруу байна",
+    "phoneError": "Утасны дугаар буруу байна",
+    "repasswordError": "Нууц үг таарахгүй байна",
+    "pinError": "Пин код буруу байна",
+    "passwordLengthError": "Хамгийн багадаа 8 үсэг",
+    "capitalLetterError": "Ядаж 1 том үсэг",
+    "loginError": "Таны нэвтрэх нэр эсгүй бол нууц үг буруу байна",
+    "letterError": "Жижиг үсэг",
+    "numericError": "Ядаж 1 тоо",
+    "symbolError": "Ядаж 1 тэмдэгт",
+    "oldPasswordError": "Нууц үг буруу байна",
+    "emptyCounter": "Ядаж 1 ширхэгийг оруулна уу",
+    "emptyName": "Нэрээ оруулна уу",
+    "isNumError": "Тоо оруулна уу",
+    "fieldPhoneError": "Утасны дугаараа гүйцэт бөглөнө үү",
+    "fieldMailError": "Имэйлээ гүйцэт зөв бөглөнө үү",
+    "emptyMail": "Имэйл оруулна уу",
+    "emptyPhone": "Утасны дугаараа оруулна уу",
+    "whitespaceErr:": "Зай авч болохгүй",
+    "corpNotFound": "Байгууллага олдсонгүй"
+  },
+  "error": {
+    "general": "Error",
+    "timeout": "Холболтын хугацаа хэтэрсэн",
+    "network": "Холболтын алдаа",
+    "badRequest": "Хүсэлтэнд хариулах боломжгүй байна",
+    "newToken400": "NT00: Холболтын алдаа",
+    "newToken401": "NT01: Холболтын алдаа",
+    "clientTokenError": "NT02: Зөвшөөрөлгүй хүсэлт"
+  },
+  "paragraph": {
+    "shortAbout": "Today, FOOD CITY center is a large center with 100 types of shopping and services, including all kinds of specialized food, consumer goods, beauty, household goods, clothing, many national dishes, fast food, car sales, training, maintenance, children's toys, and salons. and working.",
+    "aboutTitle": "FOOD CITY SHOPPING CENTER IS A COMPLETE SHOPPING AND SERVICE CENTER TO STORAGE AND SELL ALL KINDS OF FOOD, FOOD PRODUCTS, RAW MATERIALS AND FOOD SUPPLIES FROM ONE PLACE.",
+    "about1": "From 2018, the construction of the \"FOOD CITY\" shopping center, a modern comprehensive shopping complex with an area of 32,000 m2, was started in 2018, in order to introduce new standards in the trade and service sector of MU, to provide services that meet international standards, and to increase employment. Today, FOOD CITY center is a large center with 100 types of shopping and services, including all kinds of specialized food, consumer goods, beauty, household goods, clothing, many national dishes, fast food, car sales, training, maintenance, children's toys, and salons. and working. \"BOHBAT\" LLC opened and operated HAPPY LAND game center, FAT POT- hot pot franchise restaurant, Foodcity meat shop, Bar 23 sports bar in FOOD CITY center with its own investment and continues to expand its business activities. In 2024, new points are being welcomed with the aim of implementing the House Campus and Sports Complex projects.",
+    "about2": "Today, FOOD CITY center is a large center with 100 types of shopping and services, including all kinds of specialized food, consumer goods, beauty, household goods, clothing, many national dishes, fast food, car sales, training, maintenance, children's toys, and salons. and working.",
+    "about3": "BOHBAT LLC opened and operated HAPPY LAND game center, FAT POT- hot pot franchise restaurant, Foodcity meat shop, Bar 23 sports bar in FOOD CITY center with its own investment and continues to expand its business activities."
+  },
+  "brand": {
+    "bar23": "BAR 23",
+    "foodcityMeat": "Food city meat",
+    "happyLand": "Happy land",
+    "fatpot": "Fat pot"
+  }
+}

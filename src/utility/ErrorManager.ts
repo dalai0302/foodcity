@@ -1,6 +1,6 @@
 import axios from "axios";
 import BadResponseError from "../error/BadResponseError";
-import trans from "../i18n/mn/translation.json";
+import trans from "../i18n/mn/translation_mn.json";
 
 export default class ErrorManager {
   static handleRequestError = (ex: any) => {

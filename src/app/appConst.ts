@@ -4,5 +4,6 @@ export const URL_BACKEND_CATEGORY_TOP = `${URL_BACKEND_ROOT}/web/category/top`;
 export const URL_BACKEND_CATEGORY_FILE = `${URL_BACKEND_ROOT}/file`;
 export const URL_BACKEND_CATEGORY_SEARCH = `${URL_BACKEND_ROOT}/web/category/search`;
 export const URL_BACKEND_BRAND_SEARCH = `${URL_BACKEND_ROOT}/web/brand/search`;
+export const URL_BACKEND_BRAND_CATEGORY_LIST = `${URL_BACKEND_ROOT}/web/brand/categories`;
 export const RESPONSE_SUCCESS = 0;
 export const RESPONSE_ERROR = 1;

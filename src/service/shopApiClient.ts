@@ -1,5 +1,6 @@
 import axios from "axios";
 import {
+  URL_BACKEND_BRAND_CATEGORY_LIST,
   URL_BACKEND_BRAND_SEARCH,
   URL_BACKEND_CATEGORY_SEARCH,
   URL_BACKEND_CATEGORY_TOP,
@@ -11,6 +12,7 @@ import { CategorySearchRequestDto } from "../model/CategorySearchRequestDto";
 import { CategorySearchResponseDto } from "../model/CategorySearchResponseDto";
 import { BrandSearchRequestDto } from "../model/BrandSearchRequestDto";
 import { BrandSearchResponseDto } from "../model/BrandSearchResponseDto";
+import { BrandCategoryResponseDto } from "../model/BrandCategoryResponseDto";
 
 export const getCategoryList = async () => {
   const config = {
@@ -19,6 +21,15 @@ export const getCategoryList = async () => {
   const url = `${URL_BACKEND_CATEGORY_TOP}`;
 
   const response = await axios.get<CategoryTopListResponseDto>(url, config);
+  if (response.status >= 200 && response.status < 300) {
+    return response.data;
+  }
+  throw new BadResponseError(response.status);
+};
+
+export const getBrandCategoryList = async () => {
+  const url = `${URL_BACKEND_BRAND_CATEGORY_LIST}`;
+  const response = await axios.get<BrandCategoryResponseDto[]>(url);
   if (response.status >= 200 && response.status < 300) {
     return response.data;
   }
