@@ -44,6 +44,8 @@ import Job from "./pages/job/Job";
 import ForRent from "./pages/for-rent/ForRent";
 import Restaurant from "./pages/restaurant/Restaurant";
 import Service from "./pages/service/Service";
+import Advantage from "./pages/advantage/Advantage";
+import ServiceDetail from "./pages/service-detail/ServiceDetail";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -61,7 +63,7 @@ root.render(
             <Routes>
               <Route element={<App />}>
                 <Route path="/" element={<Home />} />
-                <Route path="/shop" element={<ShopList />} />
+                <Route path="/shop" element={<BrandList />} />
                 <Route path="/shop/:id" element={<ShopDetail />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/brands" element={<BrandList />} />
@@ -72,6 +74,8 @@ root.render(
                 <Route path="/for_rent" element={<ForRent />} />
                 <Route path="/restaurant" element={<Restaurant />} />
                 <Route path="/service" element={<Service />} />
+                <Route path="/service/:id" element={<ServiceDetail />} />
+                <Route path="/advantage" element={<Advantage />} />
               </Route>
             </Routes>
           </ScrollToTop>

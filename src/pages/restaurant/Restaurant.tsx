@@ -13,6 +13,21 @@ import { CategorySearchBean } from "../../model/CategorySearchResponseDto";
 const Restaurant = () => {
   const { t } = useTranslation("global");
 
+  const nameArr = [
+    {
+      name: "Bar 23",
+      link: "https://www.facebook.com/bar23sports",
+    },
+    {
+      name: "Бүх төрлийн түргэн хоол ",
+      link: "https://www.facebook.com/FoodCityMall",
+    },
+    {
+      name: "Кофе шоп",
+      link: "https://www.facebook.com/FoodCityMall",
+    },
+  ];
+
   const [subItems, setSubItems] = useState<CategorySearchBean[]>([]);
 
   useEffect(() => {
@@ -28,9 +43,23 @@ const Restaurant = () => {
     try {
       const response = await categorySearch(req);
       if (response.status === RESPONSE_SUCCESS) {
-        console.log(response.data.beans[0].subCategories);
+        const sortFunction = (a: CategorySearchBean, b: CategorySearchBean) => {
+          const levelMap: { [key: string]: number } = {
+            "": 1, // Treat "" as highest level
+            "1F": 2,
+            "2F": 3,
+            "3F": 4,
+            "4F": 5,
+          };
+          const levelA = levelMap[a.level!];
+          const levelB = levelMap[b.level!];
+          return levelA - levelB;
+        };
 
-        setSubItems(response.data.beans[0]?.subCategories!);
+        const sorted =
+          response.data.beans[0]?.subCategories!.sort(sortFunction);
+
+        setSubItems(sorted);
       }
     } catch (error) {
       ErrorManager.handleRequestError(error);
@@ -58,24 +87,17 @@ const Restaurant = () => {
             {subItems.map((item, idx) => {
               return (
                 <div className=" w-full p-0 sm:w-full max-w-full h-full wow fadeIn cursor-pointer relative group bg-white border-[1px] border-[rgb(0 0 0 / 10%)]">
-                  <a href={""} target="_blank">
-                    {/* <div className=" z-10 w-full h-full opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-white/100 to-transparent bg-gradient-to-t inset-x-0 bottom-0 pt-30 text-black text-center flex items-end">
-                      <div>
-                        <div className="transform-gpu  p-4 space-y-3 text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
-                          <div className="font-bold">{item.name}</div>
-                        </div>
-                      </div>
-                    </div> */}
+                  <a
+                    href={`${
+                      nameArr.find((el) => el?.name == item?.name)?.link
+                    }`}
+                    target="_blank"
+                  >
                     <img
                       src={`${URL_BACKEND_CATEGORY_FILE}/${item.logoMd}`}
                       alt=""
                       className="project-img-gallery h-[200px] object-contain"
                     />
-                    {/* <div className="blog-details">
-                        <h5 className="margin-ten !text-lg !text-black no-margin-bottom xs-margin-top-five">
-                          {item.name} - {item.level}
-                        </h5>
-                      </div> */}
                   </a>
                   <div className="bg-stone-300 w-full flex justify-center items-center h-[60px] text-center px-4 py-2 border-[1px] border-stone-300 text-base font-medium text-black">
                     {item.level} - {item.name}

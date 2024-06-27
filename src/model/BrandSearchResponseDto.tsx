@@ -23,9 +23,10 @@ export interface BrandBean {
     logoSm:         string;
     order:          null;
     featured:       null;
-    url:            null;
+    url:            string;
     level:          string |null;
     icon:           null;
     categoryId:     null;
     categoryName:   null;
+    description?:   string | null;
 }

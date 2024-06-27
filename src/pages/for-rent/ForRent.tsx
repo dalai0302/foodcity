@@ -51,11 +51,23 @@ const ForRent = () => {
                     scope="row"
                     className="px-6 py-4 font-semibold text-gray-900 whitespace-nowrap "
                   >
+                    F2 давхарт
+                  </th>
+                  <td className="px-6 py-4">Авто машины зогсоол</td>
+                  <td className="px-6 py-4">
+                    <b>60ш</b>
+                  </td>
+                </tr>
+                <tr className="bg-white border-b text-gray-900">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-semibold text-gray-900 whitespace-nowrap "
+                  >
                     F3 давхарт
                   </th>
                   <td className="px-6 py-4">Кофе шоп, хоол үйлдвэрлэл</td>
                   <td className="px-6 py-4">
-                   <b>1 </b>талбай
+                    <b>1 </b>талбай
                   </td>
                 </tr>
                 <tr className="bg-white border-b text-gray-900">
@@ -67,7 +79,7 @@ const ForRent = () => {
                   </th>
                   <td className="px-6 py-4">Хоол үйлдвэрлэл</td>
                   <td className="px-6 py-4">
-                   <b>1</b> талбай
+                    <b>1</b> талбай
                   </td>
                 </tr>
                 <tr className="bg-white border-b text-gray-900">
@@ -79,19 +91,7 @@ const ForRent = () => {
                   </th>
                   <td className="px-6 py-4">Том хүний бэлэн хувцас</td>
                   <td className="px-6 py-4">
-                  <b> 3</b> талбай
-                  </td>
-                </tr>
-                <tr className="bg-white border-b text-gray-900">
-                  <th
-                    scope="row"
-                    className="px-6 py-4 font-semibold text-gray-900 whitespace-nowrap "
-                  >
-                    F2 давхарт
-                  </th>
-                  <td className="px-6 py-4">Авто машины зогсоол</td>
-                  <td className="px-6 py-4">
-                   <b>60ш</b>
+                    <b> 3</b> талбай
                   </td>
                 </tr>
               </tbody>
