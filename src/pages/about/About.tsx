@@ -51,16 +51,7 @@ const About = () => {
                       <div className="col-md-12 col-sm-12 block mb-4">
                         <img className="rounded-lg" src={bg} alt="" />
                       </div>
-                      <div className="col-md-12 col-sm-12 text-left text-black">
-                        <p className="text-left text-base leading-relaxed">
-                          {t("paragraph.about2")}
-                        </p>
-                      </div>
-                      <div className="col-md-12 col-sm-12 text-left text-black">
-                        <p className="text-left text-base leading-relaxed">
-                          {t("paragraph.about3")}
-                        </p>
-                      </div>
+
                       <div className="col-md-12 col-sm-12 block mb-4">
                         <img
                           className="rounded-lg"

@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         primary_gray: "#3B3B3C",
+        selected_menu: "rgb(72, 68, 58)",
       },
       fontFamily: {
         fontFamily: {

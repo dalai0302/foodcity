@@ -3,6 +3,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/free-mode";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   EffectFade,
@@ -10,6 +11,7 @@ import {
   Pagination,
   Grid,
   Autoplay,
+  FreeMode,
 } from "swiper/modules";
 import { t } from "i18next";
 import { useTranslation } from "react-i18next";
@@ -32,7 +34,7 @@ import ReactPlayer from "react-player";
 import clsx from "clsx";
 import ReactCountryFlag from "react-country-flag";
 import { BrandCategoryResponseDto } from "../../model/BrandCategoryResponseDto";
-import bg from "../../assets/images/bg6.jpg";
+import bg from "../../assets/images/image17177290490.jpg";
 
 const Home = () => {
   const { t } = useTranslation("global");
@@ -101,17 +103,22 @@ const Home = () => {
   async function brandCategoryList() {
     try {
       const response = await getBrandCategoryList();
-      setOptions([...response]);
+      const sortedData = response.sort((a, b) => {
+        if (a.name < b.name) return -1;
+        if (a.name > b.name) return 1;
+        return 0;
+      });
+      setOptions(sortedData);
     } catch (error) {
       ErrorManager.handleRequestError(error);
     }
   }
 
-  const lastThreeItems = latestShopList.at(0)?.subCategories?.slice(-3);
+  // const lastThreeItems = latestShopList.at(0)?.subCategories?.slice(-3);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+  // const toggleDropdown = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
   const dropDownRender = () => {
     return (
@@ -142,12 +149,15 @@ const Home = () => {
                   ? selectedOption.name
                   : `${selectedOption.name.slice(0, 20)}...`}
               </span>
-              &#9660;
+              <span className="flex justify-center h-full items-center uppercase">
+                &#9660;
+              </span>
             </div>
             {visibility && (
-              <div className="options !cursor-pointer uppercase">
-                <ul>
+              <div className="options !cursor-pointer uppercase !z-50">
+                <ul className="text-sm ">
                   <li
+                    className="text-left"
                     data-value="default"
                     onClick={() =>
                       setSelectedOption({
@@ -164,7 +174,8 @@ const Home = () => {
                       className={clsx(
                         selectedOption.name === `${option.name}`
                           ? "active-option"
-                          : null
+                          : null,
+                        "text-left"
                       )}
                       onClick={() =>
                         setSelectedOption({
@@ -187,46 +198,79 @@ const Home = () => {
 
   return (
     <div>
-      <section className="p-0">
-        <Swiper
-          className="bg-black"
-          spaceBetween={30}
-          effect={"fade"}
-          navigation={false}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[EffectFade, Pagination, Autoplay]}
-        >
-          <SwiperSlide>
-            <img
-              className="w-full md:h-[600px] object-cover"
-              src={window.location.origin + "/img/fatpot.png"}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              className="w-full md:h-[600px] object-cover"
-              src={window.location.origin + "/img/bar23.png"}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              className="w-full md:h-[600px] object-cover"
-              src={window.location.origin + "/img/bg5.jpg"}
-            />
-          </SwiperSlide>
-        </Swiper>
+      <section className="pb-0 pt-8">
+        <div className="container !p-0">
+          <Swiper
+            className=" rounded-xl"
+            spaceBetween={30}
+            effect={"fade"}
+            navigation={false}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[EffectFade, Pagination, Autoplay]}
+          >
+            <SwiperSlide>
+              <a href="https://www.facebook.com/fatpotfoodcity" target="_blank">
+                <img
+                  className="w-full h-[250px] md:h-[600px] object-cover"
+                  src={window.location.origin + "/img/fatpot.png"}
+                />
+              </a>
+            </SwiperSlide>
+            <SwiperSlide>
+              <a href="https://www.facebook.com/bar23sports" target="_blank">
+                <img
+                  className="w-full h-[250px] md:h-[600px] object-cover"
+                  src={window.location.origin + "/img/bar23.png"}
+                />
+              </a>
+            </SwiperSlide>
+            <SwiperSlide>
+              <a
+                href="https://www.facebook.com/profile.php?id=100093659165960"
+                target="_blank"
+              >
+                <img
+                  className="w-full h-[250px] md:h-[600px] object-cover"
+                  src={window.location.origin + "/img/royal.jpg"}
+                />
+              </a>
+            </SwiperSlide>
+            <SwiperSlide>
+              <a
+                href="https://www.facebook.com/HighStr"
+                target="_blank"
+              >
+                <img
+                  className="w-full h-[250px] md:h-[600px] object-cover"
+                  src={window.location.origin + "/img/high_street.jpg"}
+                />
+              </a>
+            </SwiperSlide>
+            <SwiperSlide>
+              <a
+                href="https://www.facebook.com/lensgallery.mn"
+                target="_blank"
+              >
+                <img
+                  className="w-full h-[250px] md:h-[600px] object-cover"
+                  src={window.location.origin + "/img/lens.jpg"}
+                />
+              </a>
+            </SwiperSlide>
+          </Swiper>
+        </div>
       </section>
       <section className="!p-[40px]">
         <div className="container">
           {/* <div className="row">
-            <div className="col-md-12 text-center">
-              <h3 className="section-title">{t("label.brands")}</h3>
+            <div className="col-md-12 text-center pb-4">
+              <h3 className="text-black">{t("label.brands")}</h3>
             </div>
           </div> */}
           <div className="row">
@@ -236,25 +280,32 @@ const Home = () => {
               grid={{
                 rows: 2,
               }}
+              freeMode={true}
+              autoplay={{
+                delay: 2000,
+                disableOnInteraction: false,
+              }}
               spaceBetween={10}
               // navigation
               pagination={{
                 clickable: true,
               }}
-              modules={[Navigation, Grid]}
+              modules={[Navigation, Grid, Autoplay, FreeMode]}
               className="mySwiper"
             >
               {brandItemList.map((item, idx) => (
                 <SwiperSlide className="grid__slide !w-[150px] border-[1px] border-solid border-[#3B3B3C] cursor-grabbing">
-                  <img
-                    className="!w-[150px] !h-[150px] object-center object-contain p-2 m-0"
-                    src={`${URL_BACKEND_CATEGORY_FILE}/${item.logoMd}`}
-                  />
+                  <a href={item.url!} target="_blank">
+                    <img
+                      className="!w-[150px] !h-[150px] object-center object-contain p-2 m-0"
+                      src={`${URL_BACKEND_CATEGORY_FILE}/${item.logoMd}`}
+                    />
+                  </a>
                 </SwiperSlide>
               ))}
             </Swiper>
           </div>
-          <div className="row">
+          {/* <div className="row">
             <div
               className="col-md-12 text-center wow fadeInUp"
               data-wow-duration="1200ms"
@@ -266,7 +317,7 @@ const Home = () => {
                 {t("label.allBrand")}
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
       <section className="!p-0">
@@ -302,30 +353,79 @@ const Home = () => {
           <div className="row">
             <div className="col-md-12 text-center">
               <h3 className="!mb-[30px] !text-black">
-                {t("label.latestShop")}
+                {t("label.latestEvent")}
               </h3>
             </div>
           </div>
           <div className="row">
-            {lastThreeItems?.map((item, idx) => (
-              <div
-                className="col-md-4 col-sm-4 wow fadeInUp"
-                data-wow-duration="300ms"
+            <div
+              className="col-md-4 col-sm-4 wow fadeInUp"
+              data-wow-duration="300ms"
+            >
+              <a
+                href="https://www.facebook.com/events/1704397849969088?ref=newsfeed"
+                target="_blank"
               >
                 <div className="blog-post">
                   <div className="blog-post-images rounded-xl mb-4">
                     <img
                       className="w-full rounded-xl object-cover h-[215px]"
-                      src={`${URL_BACKEND_CATEGORY_FILE}/${item.logoLg}`}
+                      src={window.location.origin + "/img/event/bg1.png"}
                       alt=""
                     />
                   </div>
                   <div className="post-details">
-                    <span className="post-title !m-0">{item.name}</span>
+                    <span className="post-title !m-0">
+                      FOOD CITY FAMILY EVENT
+                    </span>
                   </div>
                 </div>
-              </div>
-            ))}
+              </a>
+            </div>
+            <div
+              className="col-md-4 col-sm-4 wow fadeInUp"
+              data-wow-duration="300ms"
+            >
+              <a
+                href="https://www.facebook.com/photo/?fbid=122206960058003255&set=a.122137618106003255"
+                target="_blank"
+              >
+                <div className="blog-post">
+                  <div className="blog-post-images rounded-xl mb-4">
+                    <img
+                      className="w-full rounded-xl object-cover h-[215px]"
+                      src={window.location.origin + "/img/event/bg2.jpg"}
+                      alt=""
+                    />
+                  </div>
+                  <div className="post-details">
+                    <span className="post-title !m-0">FOOD EVENT MART 8</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div
+              className="col-md-4 col-sm-4 wow fadeInUp"
+              data-wow-duration="300ms"
+            >
+              <a
+                href="https://www.facebook.com/photo/?fbid=760003072921092&set=pcb.759992989588767"
+                target="_blank"
+              >
+                <div className="blog-post">
+                  <div className="blog-post-images rounded-xl mb-4">
+                    <img
+                      className="w-full rounded-xl object-cover h-[215px]"
+                      src={window.location.origin + "/img/event/5.jpg"}
+                      alt=""
+                    />
+                  </div>
+                  <div className="post-details">
+                    <span className="post-title !m-0">АЛТАН НАМАР 2022</span>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
           <div className="row">
             <div
@@ -333,63 +433,82 @@ const Home = () => {
               data-wow-duration="1200ms"
             >
               <Link
-                to="/shop"
+                to="/event"
                 className="btn btn-black btn-small margin-four no-margin-bottom"
               >
-                {t("label.allShop")}
+                {t("label.allEvent")}
               </Link>
             </div>
           </div>
         </div>
       </section>
       <section
-        className="fix-background object-contain"
+        className="fix-background object-contain py-8"
         style={{ backgroundImage: `url(${bg})` }}
       >
         <div className="opacity-full bg-white"></div>
         <div className="container position-relative">
           <div className="row text-black">
-            <div className="col-md-4 col-sm-12 sm-margin-bottom-ten sm-text-center">
-              <h3 className="title-med no-padding-bottom letter-spacing-2">
-                Биднийг яагаад сонгох вэ ?
+            <div className="col-md-6 col-sm-12 sm-margin-bottom-ten text-left md:text-center">
+              <h3 className="title-med no-padding-bottom letter-spacing-2 text-left">
+                Биднийг сонгох шалтгаан
               </h3>
-              <p className="text-med margin-five">
-                Худалдаа үйлчилгээний салбарт шинэ стандартыг нэвтрүүлэх, олон
-                улсын жишигт нийцсэн үйлчилгээ үзүүлэх худалдааны төв.
+              <p className="text-med margin-five font-medium">
+                <ul>
+                  <p className="m-0">
+                    - Нэгдсэн камерийн хяналт, холбоо дохиолол, галын системтэй.
+                  </p>
+                  <p className="m-0">- Хүнсний агуулах, хүйтэн зоорьтой.</p>
+                  <p className="m-0">- Хүнсний итгэмжлэгдсэн лабораторитой.</p>
+                  <p className="m-0">- Төв зам дагуу байрлалтай.</p>
+                  <p className="m-0">- 24 цагийн харуул, хамгаалалттай.</p>
+                  <p className="m-0">
+                    - Цэвэр агаар шүүх, ашиг, бохир агаар зайлуулах, агаар
+                    боловсруулах ЕВРО төхөөрөмжөөр тоноглогдсон.
+                  </p>
+                  <p className="m-0">
+                    - Нэгдсэн оффис, үйлчилгээг хялбараар эрхэлдэг.
+                  </p>
+                </ul>
               </p>
-              <Link
-                to={"/about"}
-                className="highlight-button-dark btn btn-small button"
-              >
-                {t("label.detail")}
-              </Link>
+              <div className="text-left mb-4">
+                <Link
+                  to={"/advantage"}
+                  className="highlight-button-dark  btn btn-small button !m-0"
+                >
+                  {t("label.detail")}
+                </Link>
+              </div>
             </div>
-            <div className="col-md-2 col-sm-4 col-md-offset-2 text-center margin-three xs-margin-bottom-ten">
-              <i className="icon-profile-male medium-icon black-text display-block"></i>
-              <h1 className="font-weight-600 margin-five no-margin-bottom">
-                300+
-              </h1>
-              <p className="text-uppercase black-text letter-spacing-2 text-small margin-three">
-                ажлын байр
-              </p>
-            </div>
-            <div className="col-md-2 col-sm-4 text-center margin-three xs-margin-bottom-ten">
-              <i className="icon-global medium-icon black-text display-block"></i>
-              <h1 className="font-weight-600 margin-five no-margin-bottom">
-                30000 <span className="text-sm">м2</span>
-              </h1>
-              <p className="text-uppercase black-text letter-spacing-2 text-small margin-three">
-                цогцолбор төв
-              </p>
-            </div>
-            <div className="col-md-2 col-sm-4 text-center margin-three">
-              <i className="icon-bargraph medium-icon black-text display-block"></i>
-              <h1 className="font-weight-600 margin-five no-margin-bottom">
-                140+
-              </h1>
-              <p className="text-uppercase black-text letter-spacing-2 text-small margin-three">
-                Худалдаа үйлчилгээ
-              </p>
+
+            <div className="w-full mx-auto mt-auto ">
+              <div className="col-md-2 col-sm-4  text-center margin-three xs-margin-bottom-ten">
+                <i className="icon-profile-male medium-icon black-text display-block"></i>
+                <h1 className="font-weight-600 margin-five no-margin-bottom">
+                  300+
+                </h1>
+                <p className="text-uppercase black-text letter-spacing-2 text-small margin-three">
+                  ажлын байр
+                </p>
+              </div>
+              <div className="col-md-2 col-sm-4 text-center margin-three xs-margin-bottom-ten">
+                <i className="icon-global medium-icon black-text display-block"></i>
+                <h1 className="font-weight-600 margin-five no-margin-bottom">
+                  30000 <span className="text-sm">м2</span>
+                </h1>
+                <p className="text-uppercase black-text letter-spacing-2 text-small margin-three">
+                  цогцолбор төв
+                </p>
+              </div>
+              <div className="col-md-2 col-sm-4 text-center margin-three">
+                <i className="icon-bargraph medium-icon black-text display-block"></i>
+                <h1 className="font-weight-600 margin-five no-margin-bottom">
+                  140+
+                </h1>
+                <p className="text-uppercase black-text letter-spacing-2 text-small margin-three">
+                  Худалдаа үйлчилгээ
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -413,7 +532,7 @@ const Home = () => {
                 href="https://www.facebook.com/fatpotfoodcity"
               >
                 <img
-                  className=" h-[265px] w-[265px] bg-white rounded-xl object-contain"
+                  className=" h-[265px] w-full sm:w-[265px] bg-white rounded-xl object-contain"
                   alt=""
                   src={window.location.origin + "/img/fatpot.jpg"}
                 />
@@ -429,7 +548,7 @@ const Home = () => {
                 href="https://www.facebook.com/happylandfoodcity"
               >
                 <img
-                  className="w-[265px] bg-white rounded-xl h-[265px] object-contain"
+                  className="w-full sm:w-[265px] bg-white rounded-xl h-[265px] object-contain"
                   alt=""
                   src={window.location.origin + "/img/happyland.jpg"}
                 />
@@ -445,7 +564,7 @@ const Home = () => {
                 href="https://www.facebook.com/bar23sports"
               >
                 <img
-                  className="w-[265px] bg-white rounded-xl h-[265px] object-contain"
+                  className="w-full sm:w-[265px] bg-white rounded-xl h-[265px] object-contain"
                   alt=""
                   src={window.location.origin + "/img/bar23.jpg"}
                 />
@@ -461,7 +580,7 @@ const Home = () => {
                 href="https://www.facebook.com/FoodCityMall"
               >
                 <img
-                  className="w-[265px] bg-white rounded-xl h-[265px] object-contain"
+                  className="w-full sm:w-[265px] bg-white rounded-xl h-[265px] object-contain"
                   alt=""
                   src={window.location.origin + "/img/meat.jpg"}
                 />

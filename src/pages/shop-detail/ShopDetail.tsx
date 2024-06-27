@@ -161,23 +161,13 @@ const ShopDetail = () => {
     //   </section>
     // </>
     <>
-      <section className=" page-title bg-gray">
+      <section className=" !p-[40px] bg-gray">
         <div className="container">
           <div className="row">
-            <div
-              className="col-lg-8 col-md-7 col-sm-12 wow fadeInUp"
-              data-wow-duration="300ms"
-            >
-              <h1 className="black-text">
-                {/* {subItems.length > 0
-                  ? subItems.at(0)?.fullName
-                  : dropdownItems.at(0)?.name} */}
+            <div className="wow fadeInUp " data-wow-duration="300ms">
+              <h2 className="black-text md:text-left text-center md:mb-0 ">
                 {dropdownItems.at(0)?.fullName}
-              </h1>
-              <span className="xs-display-none">
-                {/* Lorem Ipsum is simply dummy text of the printing. */}
-              </span>
-              <div className="separator-line margin-three bg-black no-margin-lr sm-margin-top-three sm-margin-bottom-three no-margin-bottom xs-display-none"></div>
+              </h2>
             </div>
             <div className="col-md-3 col-sm-5 pull-right">
               {/* <div className="relative">
@@ -212,31 +202,27 @@ const ShopDetail = () => {
         </div>
       </section>
 
-      <section className="wow fadeIn blog-full-width-section">
+      <section className="wow fadeIn blog-full-width-section pt-8">
         <div className="container">
-          <div className="row blog-full-width no-margin xs-no-padding">
-            {dropdownItems.at(0)?.subCategories !== null && dropdownItems.at(0)?.subCategories!.map((item, idx) => (
-              <div
-                className="col-md-3 col-sm-6 col-xs-6 blog-listing wow fadeInUp"
-                data-wow-duration="300ms"
-              >
-                {/* <Link to={`/shop/${item.id}`}> */}
-                <div className="">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 lightbox-gallery items-center justify-items-center">
+            {dropdownItems.at(0)?.subCategories !== null &&
+              dropdownItems.at(0)?.subCategories!.map((item, idx) => (
+                <div
+                  className="w-full p-0 sm:w-full max-w-full h-full wow fadeIn cursor-pointer relative group bg-white border-[1px] border-[rgb(0 0 0 / 10%)]"
+                  data-wow-duration="300ms"
+                >
                   <img
-                    src={`${URL_BACKEND_CATEGORY_FILE}/${item.logoSm}`}
+                    src={`${URL_BACKEND_CATEGORY_FILE}/${item.logoMd}`}
                     alt=""
+                    className="project-img-gallery h-[200px] object-contain"
                   />
+                  <div className="bg-stone-300 w-full flex justify-center items-center h-[60px] text-center px-4 py-2 border-[1px] border-stone-300 text-base font-medium text-black">
+                    {item.level !== "" && `${item.level} -`} {item.name}
+                  </div>
                 </div>
-                <div className="blog-details">
-                  <div className="blog-title">{item.name}</div>
-
-                  <div className="separator-line bg-black no-margin-lr"></div>
-                </div>
-                {/* </Link> */}
-              </div>
-            ))}
+              ))}
           </div>
-          <div className="row no-margin">
+          {/* <div className="row no-margin">
             <div className="col-md-12 col-sm-12 col-xs-12 wow fadeInUp">
               <div className="pagination">
                 <a href="#">
@@ -254,7 +240,7 @@ const ShopDetail = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </>

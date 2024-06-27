@@ -6,8 +6,9 @@
     "shop": "Shop",
     "brands": "Brands",
     "allBrand": "All brand",
-    "latestShop": "Latest shop",
+    "latestEvent": "Last event",
     "allShop": "All shop",
+    "allEvent": "All event",
     "detail": "Detail",
     "ourService": "Our service",
     "allCategory": "All category",
@@ -26,7 +27,6 @@
     "about": "About",
     "event": "Event",
     "service": "Service"
-
   },
   "action": {
     "continue": "Continue",
@@ -34,7 +34,8 @@
     "confirmation": "Confirmation",
     "logout": "Logout",
     "price": "Price",
-    "exit": "Exit system"
+    "exit": "Exit system",
+    "all": "All"
   },
   "footer": {
     "copyRight": "Copyright © 2024 FOODCITY.MN. All Rights Reserved",
@@ -51,7 +52,7 @@
     "contact": "ХОЛБОО БАРИХ",
     "social": "social link",
     "menu": "menu",
-    "location": "ХУД 24-Р ХОРОО, НААДАМЧДЫН ГУДАМЖ, FOOD CITY MALL, УЛААНБААТАР, МОНГОЛ",
+    "location": "HUD 24TH COMMITTEE, FESTIVAL STREET, FOOD CITY MALL, ULAANBAATAR, MONGOLIA",
     "time": "10:00 AM - 9:00 PM",
     "timeTxt": "Schedule"
   },
@@ -93,9 +94,7 @@
   "paragraph": {
     "shortAbout": "Today, FOOD CITY center is a large center with 100 types of shopping and services, including all kinds of specialized food, consumer goods, beauty, household goods, clothing, many national dishes, fast food, car sales, training, maintenance, children's toys, and salons. and working.",
     "aboutTitle": "FOOD CITY SHOPPING CENTER IS A COMPLETE SHOPPING AND SERVICE CENTER TO STORAGE AND SELL ALL KINDS OF FOOD, FOOD PRODUCTS, RAW MATERIALS AND FOOD SUPPLIES FROM ONE PLACE.",
-    "about1": "From 2018, the construction of the \"FOOD CITY\" shopping center, a modern comprehensive shopping complex with an area of 32,000 m2, was started in 2018, in order to introduce new standards in the trade and service sector of MU, to provide services that meet international standards, and to increase employment. Today, FOOD CITY center is a large center with 100 types of shopping and services, including all kinds of specialized food, consumer goods, beauty, household goods, clothing, many national dishes, fast food, car sales, training, maintenance, children's toys, and salons. and working. \"BOHBAT\" LLC opened and operated HAPPY LAND game center, FAT POT- hot pot franchise restaurant, Foodcity meat shop, Bar 23 sports bar in FOOD CITY center with its own investment and continues to expand its business activities. In 2024, new points are being welcomed with the aim of implementing the House Campus and Sports Complex projects.",
-    "about2": "Today, FOOD CITY center is a large center with 100 types of shopping and services, including all kinds of specialized food, consumer goods, beauty, household goods, clothing, many national dishes, fast food, car sales, training, maintenance, children's toys, and salons. and working.",
-    "about3": "BOHBAT LLC opened and operated HAPPY LAND game center, FAT POT- hot pot franchise restaurant, Foodcity meat shop, Bar 23 sports bar in FOOD CITY center with its own investment and continues to expand its business activities."
+    "about1": "From 2018, the construction of the \"FOOD CITY\" shopping center, a modern comprehensive shopping complex with an area of 32,000 m2, was started in 2018, in order to introduce new standards in the trade and service sector of MU, to provide services that meet international standards, and to increase employment. Today, FOOD CITY center is a large center with 100 types of shopping and services, including all kinds of specialized food, consumer goods, beauty, household goods, clothing, many national dishes, fast food, car sales, training, maintenance, children's toys, and salons. and working. \"BOHBAT\" LLC opened and operated HAPPY LAND game center, FAT POT hot pot franchise restaurant, Foodcity meat shop, Bar 23 sports bar in FOOD CITY center with its own investment and continues to expand its business activities."
   },
   "brand": {
     "bar23": "BAR 23",

@@ -25,9 +25,10 @@ export interface CategorySearchBean {
   order: null;
   featured: null;
   level: string;
-  description: null;
+  description: string | null;
   icon: null;
   subCategories: CategorySearchBean[] | null;
   brands: any[] | null;
   fullName: null | string;
+  url?: string;
 }

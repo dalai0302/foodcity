@@ -146,7 +146,7 @@ html {
 }
 
 .select {
-  width: 240px;
+  width: 300px;
   height: 40px;
   padding: 0 16px;
   /* border-radius: 6px; */
@@ -159,7 +159,7 @@ html {
 .selected-option {
   height: inherit;
   display: flex;
-  align-items: center !important;
+  align-items: start !important;
   justify-content: space-between;
   color: black !important ;
 
@@ -176,8 +176,8 @@ html {
   user-select: none;
   top: 50px;
   left: 0;
-  width: 240px;
-  max-height: 249px;
+  width: 300px;
+  max-height: 200px;
   overflow-y: scroll;
   padding: 8px 8px 8px 8px;
   /* border-radius: 6px; */
@@ -189,6 +189,7 @@ html {
   li {
     height: 32px;
     font-size: 14px;
+    font-stretch: narrower;
     list-style: none;
     line-height: 36px;
     padding: 0 10px;
@@ -213,4 +214,7 @@ html {
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.5); /* Semi-transparent overlay */
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
