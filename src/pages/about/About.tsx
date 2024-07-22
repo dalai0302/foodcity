@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import bg from "../../assets/images/foodcity.jpg";
+import bg from "../../assets/images/bg2.jpg";
 import txture from "../../assets/images/texture.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Pagination } from "swiper/modules";

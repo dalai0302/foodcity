@@ -7,12 +7,12 @@ const Job = () => {
   return (
     <>
       <section className="!p-0 box-border relative">
-        <img
-          className="w-full max-h-[500px] bg-blend-darken block object-cover"
-          src={window.location.origin + "/img/job.jpg"}
-          alt=""
-        />
-        <div className="overlay1 text-center text-white text-3xl"></div>
+        <div className="container !p-0">
+          <img
+            className="w-full h-[250px] mt-8 rounded-xl md:h-[600px] object-cover"
+            src={window.location.origin + "/img/job/1.jpg"}
+          />
+        </div>
       </section>
       <section className="!py-8">
         <div className=" h-20 flex justify-center items-center ">
@@ -22,6 +22,16 @@ const Job = () => {
         </div>
         <div className="container">
           <div className="relative overflow-x-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-8">
+              <img
+                className="w-full  mt-8 rounded-xl"
+                src={window.location.origin + "/img/job/2.png"}
+              />
+              <img
+                className="w-full  mt-8 rounded-xl"
+                src={window.location.origin + "/img/job/3.png"}
+              />
+            </div>
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
               <caption className="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white">
                 <span className="uppercase pb-1 underline">Food city</span>
@@ -329,7 +339,11 @@ const Job = () => {
       </section>
       <section className="!py-8">
         <div className="container ">
-          <img className="w-full mx-auto" src={window.location.origin + "/img/bar.png"} alt="" />
+          <img
+            className="w-full mx-auto"
+            src={window.location.origin + "/img/bar.png"}
+            alt=""
+          />
         </div>
       </section>
     </>

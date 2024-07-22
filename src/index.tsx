@@ -46,6 +46,9 @@ import Restaurant from "./pages/restaurant/Restaurant";
 import Service from "./pages/service/Service";
 import Advantage from "./pages/advantage/Advantage";
 import ServiceDetail from "./pages/service-detail/ServiceDetail";
+import SportBar from "./pages/sport-bar/SportBar";
+import Fatpot from "./pages/fatpot/Fatpot";
+import FcMeat from "./pages/fc-meat/FcMeat";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -63,8 +66,8 @@ root.render(
             <Routes>
               <Route element={<App />}>
                 <Route path="/" element={<Home />} />
-                <Route path="/shop" element={<BrandList />} />
-                <Route path="/shop/:id" element={<ShopDetail />} />
+                <Route path="/stores" element={<BrandList />} />
+                <Route path="/stores/:id" element={<ShopDetail />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/brands" element={<BrandList />} />
                 <Route path="/guide" element={<Guide />} />
@@ -75,6 +78,9 @@ root.render(
                 <Route path="/restaurant" element={<Restaurant />} />
                 <Route path="/service" element={<Service />} />
                 <Route path="/service/:id" element={<ServiceDetail />} />
+                <Route path="/service/bar23" element={<SportBar />} />
+                <Route path="/service/fatpot" element={<Fatpot />} />
+                <Route path="/service/fc-meat" element={<FcMeat />} />
                 <Route path="/advantage" element={<Advantage />} />
               </Route>
             </Routes>

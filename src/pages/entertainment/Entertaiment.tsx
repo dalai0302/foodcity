@@ -11,8 +11,11 @@ import {
   Grid,
   Autoplay,
 } from "swiper/modules";
+import { useTranslation } from "react-i18next";
 
 const Entertaiment = () => {
+  const { t } = useTranslation("global");
+
   return (
     <>
       <section className="!p-0 ">
@@ -166,22 +169,18 @@ const Entertaiment = () => {
                 Happy land
               </h2>
               <p className="text-white w-full sm:w-[70%] text-lg">
-                HAPPY LAND тоглоомын төв нь нийт 200 хүүхэд хүлээн авах чадалтай
-                тоглоомын төв бөгөөд манай тоглоомын төвд 1-10 настай хүүхдүүд
-                тоглох боломжтой.
-                <br />
-                Аюулгүй, тухтай орчинд та бүхэн хүүхдээ тоглуулаарай.
+                {t("paragraph.entertainmentPara1")}
               </p>
               <br />
               <br />
               <p className="text-white">
-                <b>Өдөр бүр</b>
+                <b>{t("action.everyDay")}</b>
               </p>
               <p className="text-white text-lg uppercase">
-                Ажиллах цагийн хуваарь: Өдөр бүр 11.00 - 20.00
+                {t("action.openingHours")}: {t("action.everyDay")} 11.00 - 20.00
               </p>
               <p className="text-white">
-                <b className="mr-2">ФБ холбоос:</b>{" "}
+                <b className="mr-2">{t("action.fbLink")}</b>{" "}
                 <a target="_blank" href="https://www.facebook.com/FoodCityMall">
                   <i className="fa fa-facebook text-white before:text-2xl"></i>
                 </a>
@@ -192,18 +191,38 @@ const Entertaiment = () => {
       </section>
       <section className="!p-[40px]">
         <div className="container mx-auto">
-          <div className="">
-            <div className="md:px-8 px-0 mb-8">
-              <p className="text-center font-semibold text-2xl text-[#3B3B3C] mb-8">
-                WELCOME TO THE HAPPY LAND Playground
-              </p>
-              {/* <h3 className="font-fontFamily text-center  text-lg text-[#3B3B3C]">
+          <div className="md:px-8 px-0 mb-8">
+            <p className="text-center font-semibold text-2xl text-[#3B3B3C] mb-8">
+              WELCOME TO THE HAPPY LAND Playground
+            </p>
+            {/* <h3 className="font-fontFamily text-center  text-lg text-[#3B3B3C]">
                 Манай тоглоомын төвд 1-10 настай хүүхдүүд тоглох боломжтой.{" "}
                 <br />
                 шинээр том, жижиг лего тоглоом, бага насны хүүхдүүдэд зориулсан
                 элс, бөмбөлөгнүүд шинээр нэмэгдэж ирсэн байгаа.
               </h3> */}
-            </div>
+          </div>
+          <div className="relative flex items-center justify-center w-full h-[250px] md:h-[600px]  overflow-hidden">
+            {/* <div className="relative z-30 p-5 text-2xl text-white w-full h-full bg-black  bg-opacity-50 opacity-35"></div> */}
+            <video
+              //   loop
+              // autoPlay
+              controls
+              muted
+              className="absolute z-10 w-full h-[250px] mt-8 rounded-xl md:h-[600px] object-cover max-w-none"
+            >
+              <source
+                src={window.location.origin + "/video/happyland.mp4"}
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
+      <section className="!p-[40px]">
+        <div className="container mx-auto">
+          <div className="">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">
               <div className="border-[1px] border-black">
                 {/* <img

@@ -3,12 +3,12 @@
   "label": {
     "home": "Home",
     "about": "About",
-    "shop": "Shop",
+    "store": "store",
     "brands": "Brands",
-    "allBrand": "All brand",
+    "allBrand": "All brands",
     "latestEvent": "Last event",
     "allShop": "All shop",
-    "allEvent": "All event",
+    "allEvent": "All events",
     "detail": "Detail",
     "ourService": "Our service",
     "allCategory": "All category",
@@ -19,9 +19,9 @@
     "applicationNavbar": "Application"
   },
   "menu": {
-    "shop": "Shop",
+    "store": "Store",
     "guide": "Guide",
-    "restaurant": "Restaurant",
+    "restaurant": "Food & Drink",
     "brand": "Brand",
     "entertainment": "Entertainment",
     "about": "About",
@@ -35,26 +35,33 @@
     "logout": "Logout",
     "price": "Price",
     "exit": "Exit system",
-    "all": "All"
+    "all": "All",
+    "fbLink": "FB link: ",
+    "everyDay": "Every day",
+    "openingHours": "Opening Hours",
+    "choose": "Why Choose Us",
+    "workplace": "workplace",
+    "complex": "complex center",
+    "shopping": "shopping center"
   },
   "footer": {
     "copyRight": "Copyright © 2024 FOODCITY.MN. All Rights Reserved",
     "footerQuestionsAndAnswer": "Question and answer",
     "about": "about us",
-    "shop": "Shop",
-    "job": "Job vacancy",
-    "forRent": "SPACE FOR RENT",
-    "shops": "shops",
+    "store": "Store",
+    "job": "Careers",
+    "forRent": "SPACES FOR RENT",
+    "stores": "stores",
     "brand": "brand",
     "guide": "guide",
     "event": "event",
     "structure": "structure",
-    "contact": "ХОЛБОО БАРИХ",
+    "contact": "Contact us",
     "social": "social link",
     "menu": "menu",
-    "location": "HUD 24TH COMMITTEE, FESTIVAL STREET, FOOD CITY MALL, ULAANBAATAR, MONGOLIA",
+    "location": "MONGOLIA, ULAANBAATAR, KHAN-UUL DISTRICT 24TH KHOROO,",
     "time": "10:00 AM - 9:00 PM",
-    "timeTxt": "Schedule"
+    "timeTxt": "Opening Hours"
   },
   "validation": {
     "fieldError": "Талбарын утгыг гүйцэт зөв оруулна уу",
@@ -94,12 +101,55 @@
   "paragraph": {
     "shortAbout": "Today, FOOD CITY center is a large center with 100 types of shopping and services, including all kinds of specialized food, consumer goods, beauty, household goods, clothing, many national dishes, fast food, car sales, training, maintenance, children's toys, and salons. and working.",
     "aboutTitle": "FOOD CITY SHOPPING CENTER IS A COMPLETE SHOPPING AND SERVICE CENTER TO STORAGE AND SELL ALL KINDS OF FOOD, FOOD PRODUCTS, RAW MATERIALS AND FOOD SUPPLIES FROM ONE PLACE.",
-    "about1": "From 2018, the construction of the \"FOOD CITY\" shopping center, a modern comprehensive shopping complex with an area of 32,000 m2, was started in 2018, in order to introduce new standards in the trade and service sector of MU, to provide services that meet international standards, and to increase employment. Today, FOOD CITY center is a large center with 100 types of shopping and services, including all kinds of specialized food, consumer goods, beauty, household goods, clothing, many national dishes, fast food, car sales, training, maintenance, children's toys, and salons. and working. \"BOHBAT\" LLC opened and operated HAPPY LAND game center, FAT POT hot pot franchise restaurant, Foodcity meat shop, Bar 23 sports bar in FOOD CITY center with its own investment and continues to expand its business activities."
+    "about1": "The construction of the FOOD CITY modern complex shopping center or mall with an area of ​​30,000 m2, was started in 2018 to introduce new standards in the field of trade and services of Mongolia, to provide services that meet international standards, and to increase employment. It was fully operational in 2021. Nowadays, FOOD CITY mall is a large shopping center with many types of shopping and services, including variety of food, consumer goods, beauty, salons, manicure, pharmacy, household goods, clothes, coffee shops, bakery, convenient store, food court, fast food restaurants, hot pot restaurant, sports bar, indoor playground, toys, auto sales, services and maintenance. BUKHBAT LLC has opened and invested in HAPPY LAND playground, FAT POT hot pot franchise restaurant, BAR 23 sports bar, and FOOD CITY MEAT butchery at its FOOD CITY mall and continues to expand its business activities.",
+    "entertainmentPara1": "HAPPY LAND indoor playground that can accommodate a total of 200 children, and aged 1-10 can play in here. Let your beloved child play in a safe and comfortable environment.",
+    "choose1": "- Integrated camera control, communication alarm and fire system",
+    "choose2": "- Food storage and cold cellar.",
+    "choose3": "- Certified food laboratory.",
+    "choose4": "- Located along the main road.",
+    "choose5": "- 24-hour guard and security.",
+    "choose6": "- Fire smoke extraction and ventilation system.",
+    "choose7": "- Equipped with EURO equipment for clean air filtration, air removal and air processing.",
+    "choose8": "- Connected to central heating, clean sewage and electricity network.",
+    "choose9": "- 700 parking spaces.",
+    "choose10": "- 7 Passenger elevators.",
+    "choose11": "- 2 Cargo elevators.",
+    "choose12": "- Front road.",
+    "choose13": "- Integrated office at the mall.",
+    "choose14": "- Each floor has a bathroom."
   },
   "brand": {
     "bar23": "BAR 23",
     "foodcityMeat": "Food city meat",
     "happyLand": "Happy land",
     "fatpot": "Fat pot"
+  },
+  "language": {
+    "mongolian": "mn",
+    "english": "en"
+  },
+  "meat": {
+    "title": "“FOOD CITY” MALL MEAT SHOPPING AREA",
+    "p1": "1. There is a room for meat receiving, shredding, sorting and packaging.",
+    "p2": "2. There is a cellar for deep freezing cold storage of meat. /300 tons of meat /",
+    "p3": "3.It has an accredited food laboratory for testing meat and meat products.",
+    "p4": "4. Each trading floor is connected to hot and cold fresh water, waste water and oil holding systems.",
+    "p5": "5. Ion lights are installed in the sales area and cold storage to remove bacteria.",
+    "p6": "6. The building's main ventilation, cooling, camera, communication and fire systems are connected to the shopping mall."
+  },
+  "sportBar": {
+    "text1": "BAR 23 IS OPEN NOW.",
+    "p1": "Dear sports fans, if you want to spend time with your friends, loved ones, and colleagues in a fun and comfortable place, We present to you the BAR 23 sports bar located in Food City. ",
+    "p2": "When you come to BAR 23 sports bar:",
+    "txt1": "- Shopping mall",
+    "txt2": "- Electron Darts",
+    "txt3": "- Pool, Billiard",
+    "txt4": "- Electron Foosball",
+    "txt5": "- Various Drinking Games",
+    "txt6": "- various cocktails",
+    "txt7": "- Delicious food from the chef",
+    "txt8": "- All these services are available under one roof.",
+    "location": "Location: 1st floor of Food City shopping center",
+    "contact": "Contact phone number: 7608 11"
   }
 }

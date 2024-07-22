@@ -118,9 +118,9 @@ const Header = () => {
                     <li className="max-xl:border-b max-xl:py-3">
                       <Link
                         className="hover:text-[#007bff] text-black font-normal text-[15px] block"
-                        to={`/shop`}
+                        to={`/stores`}
                       >
-                        {t("menu.shop")}
+                        {t("menu.store")}
                       </Link>
                     </li>
                   );
@@ -170,7 +170,9 @@ const Header = () => {
                   );
               }
             })}
-
+            <div className="xl:hidden block mt-2 mx-auto">
+              <LanguageSelector />
+            </div>
             <li className="mb-6 hidden max-xl:block xl:order-1">
               <a href="">
                 <img
@@ -230,7 +232,9 @@ const Header = () => {
         </Link>
 
         <div className="space-x-6 relative xl:absolute xl:right-10 flex items-center md:ml-auto ">
-          <LanguageSelector />
+          <div className="">
+            <LanguageSelector />
+          </div>
         </div>
       </section>
 
@@ -255,9 +259,9 @@ const Header = () => {
                     <li className="max-xl:border-b max-xl:py-3">
                       <Link
                         className="hover:text-[#007bff] text-black font-normal text-[15px] block"
-                        to={`/shop`}
+                        to={`/stores`}
                       >
-                        {t("menu.shop")}
+                        {t("menu.store")}
                       </Link>
                     </li>
                   );

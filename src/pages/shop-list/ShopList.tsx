@@ -92,7 +92,7 @@ const ShopList = () => {
           <div className="relative ">
             <div className="pb-2 sm:pb-[35px] sticky top-5">
               <h2 className="text-center text-black font-semibold ">
-                {t("menu.shop")}
+                {t("menu.store")}
               </h2>
               <hr className="border-b-2 border-black" />
             </div>

@@ -224,7 +224,7 @@ const BrandList = () => {
           <div className="row">
             <div className="wow fadeInUp pb-8" data-wow-duration="300ms">
               <h2 className="black-text md:text-left text-center md:mb-0 ">
-                {t("menu.shop")}
+                {t("menu.store")}
               </h2>
               {/* <span className="xs-display-none">
                 Lorem Ipsum is simply dummy text of the printing.

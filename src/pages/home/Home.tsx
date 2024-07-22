@@ -34,7 +34,7 @@ import ReactPlayer from "react-player";
 import clsx from "clsx";
 import ReactCountryFlag from "react-country-flag";
 import { BrandCategoryResponseDto } from "../../model/BrandCategoryResponseDto";
-import bg from "../../assets/images/image17177290490.jpg";
+import bg from "../../assets/images/foodcity_bg.jpg";
 
 const Home = () => {
   const { t } = useTranslation("global");
@@ -226,7 +226,7 @@ const Home = () => {
               <a href="https://www.facebook.com/bar23sports" target="_blank">
                 <img
                   className="w-full h-[250px] md:h-[600px] object-cover"
-                  src={window.location.origin + "/img/bar23.png"}
+                  src={window.location.origin + "/img/sportbar/bg.jpg"}
                 />
               </a>
             </SwiperSlide>
@@ -242,10 +242,7 @@ const Home = () => {
               </a>
             </SwiperSlide>
             <SwiperSlide>
-              <a
-                href="https://www.facebook.com/HighStr"
-                target="_blank"
-              >
+              <a href="https://www.facebook.com/HighStr" target="_blank">
                 <img
                   className="w-full h-[250px] md:h-[600px] object-cover"
                   src={window.location.origin + "/img/high_street.jpg"}
@@ -253,10 +250,7 @@ const Home = () => {
               </a>
             </SwiperSlide>
             <SwiperSlide>
-              <a
-                href="https://www.facebook.com/lensgallery.mn"
-                target="_blank"
-              >
+              <a href="https://www.facebook.com/lensgallery.mn" target="_blank">
                 <img
                   className="w-full h-[250px] md:h-[600px] object-cover"
                   src={window.location.origin + "/img/lens.jpg"}
@@ -451,24 +445,17 @@ const Home = () => {
           <div className="row text-black">
             <div className="col-md-6 col-sm-12 sm-margin-bottom-ten text-left md:text-center">
               <h3 className="title-med no-padding-bottom letter-spacing-2 text-left">
-                Биднийг сонгох шалтгаан
+                {t("action.choose")}
               </h3>
               <p className="text-med margin-five font-medium">
                 <ul>
-                  <p className="m-0">
-                    - Нэгдсэн камерийн хяналт, холбоо дохиолол, галын системтэй.
-                  </p>
-                  <p className="m-0">- Хүнсний агуулах, хүйтэн зоорьтой.</p>
-                  <p className="m-0">- Хүнсний итгэмжлэгдсэн лабораторитой.</p>
-                  <p className="m-0">- Төв зам дагуу байрлалтай.</p>
-                  <p className="m-0">- 24 цагийн харуул, хамгаалалттай.</p>
-                  <p className="m-0">
-                    - Цэвэр агаар шүүх, ашиг, бохир агаар зайлуулах, агаар
-                    боловсруулах ЕВРО төхөөрөмжөөр тоноглогдсон.
-                  </p>
-                  <p className="m-0">
-                    - Нэгдсэн оффис, үйлчилгээг хялбараар эрхэлдэг.
-                  </p>
+                  <p className="m-0">{t("paragraph.choose1")}</p>
+                  <p className="m-0">{t("paragraph.choose2")}</p>
+                  <p className="m-0">{t("paragraph.choose3")}.</p>
+                  <p className="m-0">{t("paragraph.choose4")}</p>
+                  <p className="m-0">{t("paragraph.choose5")}</p>
+                  <p className="m-0">{t("paragraph.choose6")}</p>
+                  <p className="m-0">{t("paragraph.choose7")}</p>
                 </ul>
               </p>
               <div className="text-left mb-4">
@@ -488,7 +475,7 @@ const Home = () => {
                   300+
                 </h1>
                 <p className="text-uppercase black-text letter-spacing-2 text-small margin-three">
-                  ажлын байр
+                  {t("action.workplace")}
                 </p>
               </div>
               <div className="col-md-2 col-sm-4 text-center margin-three xs-margin-bottom-ten">
@@ -497,7 +484,7 @@ const Home = () => {
                   30000 <span className="text-sm">м2</span>
                 </h1>
                 <p className="text-uppercase black-text letter-spacing-2 text-small margin-three">
-                  цогцолбор төв
+                  {t("action.complex")}
                 </p>
               </div>
               <div className="col-md-2 col-sm-4 text-center margin-three">
@@ -506,7 +493,7 @@ const Home = () => {
                   140+
                 </h1>
                 <p className="text-uppercase black-text letter-spacing-2 text-small margin-three">
-                  Худалдаа үйлчилгээ
+                  {t("action.shopping")}
                 </p>
               </div>
             </div>
@@ -526,11 +513,7 @@ const Home = () => {
           </div>
           <div className="row">
             <div className="col-md-3 col-sm-6 text-center sm-margin-bottom-ten">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.facebook.com/fatpotfoodcity"
-              >
+              <Link to={"/service/fatpot"}>
                 <img
                   className=" h-[265px] w-full sm:w-[265px] bg-white rounded-xl object-contain"
                   alt=""
@@ -539,14 +522,10 @@ const Home = () => {
                 <h5 className="margin-ten no-margin-bottom xs-margin-top-five post-title">
                   {t("brand.fatpot")}
                 </h5>
-              </a>
+              </Link>
             </div>
             <div className="col-md-3 col-sm-6 text-center sm-margin-bottom-ten">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.facebook.com/happylandfoodcity"
-              >
+              <Link to={"/entertainment"}>
                 <img
                   className="w-full sm:w-[265px] bg-white rounded-xl h-[265px] object-contain"
                   alt=""
@@ -555,14 +534,10 @@ const Home = () => {
                 <h5 className="margin-ten no-margin-bottom xs-margin-top-five post-title">
                   {t("brand.happyLand")}
                 </h5>
-              </a>
+              </Link>
             </div>
             <div className="col-md-3 col-sm-6 text-center xs-margin-bottom-ten ">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.facebook.com/bar23sports"
-              >
+              <Link to={"/service/bar23"}>
                 <img
                   className="w-full sm:w-[265px] bg-white rounded-xl h-[265px] object-contain"
                   alt=""
@@ -571,14 +546,10 @@ const Home = () => {
                 <h5 className="margin-ten no-margin-bottom xs-margin-top-five post-title">
                   {t("brand.bar23")}
                 </h5>
-              </a>
+              </Link>
             </div>
             <div className="col-md-3 col-sm-6 text-center">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.facebook.com/FoodCityMall"
-              >
+              <Link to={"/service/fc-meat"}>
                 <img
                   className="w-full sm:w-[265px] bg-white rounded-xl h-[265px] object-contain"
                   alt=""
@@ -587,7 +558,7 @@ const Home = () => {
                 <h5 className="margin-ten no-margin-bottom xs-margin-top-five post-title">
                   {t("brand.foodcityMeat")}
                 </h5>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -11,8 +11,11 @@ import {
   Grid,
   Autoplay,
 } from "swiper/modules";
+import { useTranslation } from "react-i18next";
 
 const ServiceDetail = () => {
+  const { t } = useTranslation("global");
+
   return (
     <>
       <section className="!p-0 ">
@@ -97,26 +100,20 @@ const ServiceDetail = () => {
           <div className="md:w-[48%] w-full md:h-[600px] bg-[#3B3B3C] p-12">
             <div className="border-[1px] border-[#73653A] w-full h-full p-8">
               <h2 className="text-white uppercase text-left sm:mt-4 mb-8 font-poppins">
-                “Фүүд сити” төвийн махны худалдааны талбай
+                {t("meat.title")}
               </h2>
               <p className="text-white font-semibold text-base">
-                1. Мах хүлээн авч сэврээх, ангилах, савлах өрөөтэй. <br />
+                {t("meat.p1")} <br />
                 <br />
-                2. Махыг гүн хөлдөөх, хадгалах хүйтэн агуулах зоорьтой. /300 тн
-                мах / <br />
+                {t("meat.p2")} <br />
                 <br />
-                3. Мах, махан бүтээгдэхүүнд шинжилгээ хийх хүнсний итгэмжлэгдсэн
-                лабораторитай. <br />
+                {t("meat.p3")} <br />
                 <br />
-                4. Худалдааны талбай бүрийг халуун, хүйтэн цэвэр ус, бохир ус,
-                тос барих системд холбосон. <br />
+                {t("meat.p4")} <br />
                 <br />
-                5. Худалдааны талбай, хүйтэн агуулахад нян бактер устгах ион
-                гэрэл суурилуулсан. <br />
+                {t("meat.p5")} <br />
                 <br />
-                6. Барилгын үндсэн агаар сэлгэлт, хөргөлт, камержуулалт, холбоо
-                дохиолол, галын систем нь хүнсний худалдааны төвийн стандартад
-                нийцсэн. <br />
+                {t("meat.p6")} <br />
                 <br />
               </p>
             </div>
