@@ -9,8 +9,8 @@ const Fatpot = () => {
   return (
     <>
       <section className="!p-0 ">
-        <div className="flex md:flex-row flex-col">
-          <div className="md:w-[52%] w-full">
+        <div className="flex xl:flex-row flex-col">
+          <div className="xl:w-[52%] w-full">
             <Swiper
               className=""
               spaceBetween={30}
@@ -33,39 +33,39 @@ const Fatpot = () => {
               </SwiperSlide>
             </Swiper>
           </div>
-          <div className="md:w-[48%] w-full md:h-[600px] bg-[#3B3B3C] p-12">
+          <div className="xl:w-[48%] w-full h-full 2xl:h-[600px] bg-[#3B3B3C] p-12">
             <div className="border-[1px] border-[#73653A] w-full h-full p-8">
               <h2 className="text-white uppercase text-left sm:mt-4 mb-8 font-poppins">
                 FAT POT Hot Pot Restaurant
               </h2>
               <div>
                 <p className="text-white font-semibold text-base">
-                  Уламжлалт хятад хоолны амтыг орчин үеийн арга техниктэй
-                  хослуулан хятад мэргэжлийн тогоочийн бэлтгэсэн хоолны дахин
-                  давтагдашгүй амтыг танд зориулав.
+                  {t("fatpot.text1")}
+                  <br />
+                </p>
+                <p className="text-white font-semibold text-base">
+                  {t("fatpot.text2")}
                   <br />
                 </p>
                 <ul className="text-white font-semibold text-base">
-                  {/* <li>{t("sportBar.txt1")}</li>
-                  <li>{t("sportBar.txt2")} </li>
-                  <li>{t("sportBar.txt3")}</li>
-                  <li>{t("sportBar.txt4")}</li>
-                  <li>{t("sportBar.txt5")}</li>
-                  <li>{t("sportBar.txt6")}</li>
-                  <li>{t("sportBar.txt7")}</li>
-                  <li>{t("sportBar.txt8")}</li> */}
                   <li>
-                    <b>
-                      Хаяг : Хан-уул дүүрэг 24-р хороо, Наадамчдын гудамж FOOD
-                      CITY 4 давхарт{" "}
-                    </b>
+                    <b>{t("fatpot.address")}</b>
                   </li>
                   <li>
-                    <b>Утас:7766 1133</b>
+                    <b>{t("fatpot.phone")} <a className="text-white font-semibold text-base" href="tel:+97677661133">7766 1133</a></b>
                   </li>
                   <li>
-                    <b>Цагийн хуваарь: 11:00- 00:00 цаг хүртэл ажиллана.</b>
+                    <b>{t("fatpot.time")}</b>
                   </li>
+                  <p className="text-white">
+                    <b className="mr-2">{t("action.fbLink")}</b>{" "}
+                    <a
+                      target="_blank"
+                      href="https://www.facebook.com/fatpotfoodcity"
+                    >
+                      <i className="fa fa-facebook text-white before:text-2xl"></i>
+                    </a>
+                  </p>
                 </ul>
               </div>
             </div>

@@ -9,8 +9,8 @@ const SportBar = () => {
   return (
     <>
       <section className="!p-0 ">
-        <div className="flex md:flex-row flex-col">
-          <div className="md:w-[52%] w-full">
+        <div className="flex xl:flex-row flex-col">
+          <div className="xl:w-[52%] w-full">
             <Swiper
               className=""
               spaceBetween={30}
@@ -51,14 +51,13 @@ const SportBar = () => {
               </SwiperSlide>
             </Swiper>
           </div>
-          <div className="md:w-[48%] w-full md:h-[600px] bg-[#3B3B3C] p-12">
+          <div className="xl:w-[48%] w-full h-full 2xl:h-[600px] bg-[#3B3B3C] p-12">
             <div className="border-[1px] border-[#73653A] w-full h-full p-8">
               <h2 className="text-white uppercase text-left sm:mt-4 mb-8 font-poppins">
                 {t("sportBar.text1")}
               </h2>
               <p className="text-white font-semibold text-base">
                 {t("sportBar.p1")}
-                <br /> {t("sportBar.p2")}
                 <br />
                 <ul className="">
                   <li>{t("sportBar.txt1")}</li>
@@ -68,13 +67,32 @@ const SportBar = () => {
                   <li>{t("sportBar.txt5")}</li>
                   <li>{t("sportBar.txt6")}</li>
                   <li>{t("sportBar.txt7")}</li>
-                  <li>{t("sportBar.txt8")}</li>
                   <li>
                     <b>{t("sportBar.location")}</b>
                   </li>
                   <li>
-                    <b>{t("sportBar.contact")}</b>
+                    <b>
+                      {t("sportBar.contact")}{" "}
+                      <a
+                        className="text-white font-semibold text-base"
+                        href="tel:+9767608 1111"
+                      >
+                        7608 1111
+                      </a>
+                    </b>
                   </li>
+                  <li>
+                    <b>{t("sportBar.time")}</b>
+                  </li>
+                  <p className="text-white">
+                    <b className="mr-2">{t("action.fbLink")}</b>{" "}
+                    <a
+                      target="_blank"
+                      href="https://www.facebook.com/bar23sports"
+                    >
+                      <i className="fa fa-facebook text-white before:text-2xl"></i>
+                    </a>
+                  </p>
                 </ul>
               </p>
             </div>

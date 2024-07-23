@@ -9,8 +9,8 @@ const FcMeat = () => {
   return (
     <>
       <section className="!p-0 ">
-        <div className="flex md:flex-row flex-col">
-          <div className="md:w-[52%] w-full">
+        <div className="flex min-h-[500px] flex-col text-black">
+          {/* <div className="md:w-[52%] w-full">
             <Swiper
               className=""
               spaceBetween={30}
@@ -73,10 +73,12 @@ const FcMeat = () => {
                 </ul>
               </p>
             </div>
-          </div>
+          </div> */}
+          <h2 className="text-center mt-auto mx-auto">Food city Meat</h2>
+          <h2 className="text-center mx-auto my-auto">{t("action.comingSoon")}</h2>
         </div>
       </section>
-      <section className="!p-[40px]">
+      {/* <section className="!p-[40px]">
         <div className="container mx-auto">
           <div className="">
             <div className="md:px-8 px-0 mb-8">
@@ -102,7 +104,7 @@ const FcMeat = () => {
             </video>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

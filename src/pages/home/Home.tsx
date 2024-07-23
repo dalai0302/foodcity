@@ -356,10 +356,11 @@ const Home = () => {
               className="col-md-4 col-sm-4 wow fadeInUp"
               data-wow-duration="300ms"
             >
-              <a
+              {/* <a
                 href="https://www.facebook.com/events/1704397849969088?ref=newsfeed"
                 target="_blank"
-              >
+              > */}
+              <Link to={"/event"}>
                 <div className="blog-post">
                   <div className="blog-post-images rounded-xl mb-4">
                     <img
@@ -374,16 +375,18 @@ const Home = () => {
                     </span>
                   </div>
                 </div>
-              </a>
+              </Link>
+              {/* </a> */}
             </div>
             <div
               className="col-md-4 col-sm-4 wow fadeInUp"
               data-wow-duration="300ms"
             >
-              <a
+              {/* <a
                 href="https://www.facebook.com/photo/?fbid=122206960058003255&set=a.122137618106003255"
                 target="_blank"
-              >
+              > */}
+              <Link to={"/event"}>
                 <div className="blog-post">
                   <div className="blog-post-images rounded-xl mb-4">
                     <img
@@ -396,16 +399,18 @@ const Home = () => {
                     <span className="post-title !m-0">FOOD EVENT MART 8</span>
                   </div>
                 </div>
-              </a>
+              </Link>
+              {/* </a> */}
             </div>
             <div
               className="col-md-4 col-sm-4 wow fadeInUp"
               data-wow-duration="300ms"
             >
-              <a
+              {/* <a
                 href="https://www.facebook.com/photo/?fbid=760003072921092&set=pcb.759992989588767"
                 target="_blank"
-              >
+              > */}
+              <Link to={"/event"}>
                 <div className="blog-post">
                   <div className="blog-post-images rounded-xl mb-4">
                     <img
@@ -418,7 +423,8 @@ const Home = () => {
                     <span className="post-title !m-0">АЛТАН НАМАР 2022</span>
                   </div>
                 </div>
-              </a>
+              </Link>
+              {/* </a> */}
             </div>
           </div>
           <div className="row">

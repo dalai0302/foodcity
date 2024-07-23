@@ -96,13 +96,13 @@ const Advantage = () => {
                 <SwiperSlide className="rounded-xl">
                   <img
                     className="w-[250px] sm:w-[500px] h-[250px] md:h-[600px] object-contain !rounded-xl"
-                    src={window.location.origin + "/img/advantage/5.png"}
+                    src={window.location.origin + "/img/advantage/5.jpg"}
                   />
                 </SwiperSlide>
                 <SwiperSlide className="rounded-xl">
                   <img
                     className="w-[250px] sm:w-[500px] h-[250px] md:h-[600px] object-contain !rounded-xl"
-                    src={window.location.origin + "/img/advantage/6.png"}
+                    src={window.location.origin + "/img/advantage/6.jpg"}
                   />
                 </SwiperSlide>
               </Swiper>
@@ -147,7 +147,7 @@ const Advantage = () => {
                 <SwiperSlide className="rounded-xl">
                   <img
                     className="w-[250px] sm:w-[500px] h-[250px] md:h-[600px] object-contain !rounded-xl"
-                    src={window.location.origin + "/img/advantage/6mn.png"}
+                    src={window.location.origin + "/img/advantage/6mn.jpg"}
                   />
                 </SwiperSlide>
               </Swiper>

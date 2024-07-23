@@ -19,8 +19,8 @@ const Entertaiment = () => {
   return (
     <>
       <section className="!p-0 ">
-        <div className="flex md:flex-row flex-col">
-          <div className="md:w-[52%] w-full">
+        <div className="flex xl:flex-row flex-col">
+          <div className="xl:w-[52%] w-full">
             <Swiper
               className=""
               spaceBetween={30}
@@ -163,7 +163,7 @@ const Entertaiment = () => {
               </SwiperSlide>
             </Swiper>
           </div>
-          <div className="md:w-[48%] w-full bg-[#3B3B3C] p-12">
+          <div className="xl:w-[48%] w-full bg-[#3B3B3C] p-12">
             <div className="border-[1px] border-[#73653A] w-full h-full p-8">
               <h2 className="text-white uppercase text-left sm:mt-12 mb-8 font-poppins">
                 Happy land
@@ -181,7 +181,7 @@ const Entertaiment = () => {
               </p>
               <p className="text-white">
                 <b className="mr-2">{t("action.fbLink")}</b>{" "}
-                <a target="_blank" href="https://www.facebook.com/FoodCityMall">
+                <a target="_blank" href="https://www.facebook.com/happylandfoodcity">
                   <i className="fa fa-facebook text-white before:text-2xl"></i>
                 </a>
               </p>

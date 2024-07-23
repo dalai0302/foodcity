@@ -42,7 +42,8 @@
     "choose": "Why Choose Us",
     "workplace": "workplace",
     "complex": "complex center",
-    "shopping": "shopping center"
+    "shopping": "shopping center",
+    "comingSoon": "Coming soon ..."
   },
   "footer": {
     "copyRight": "Copyright © 2024 FOODCITY.MN. All Rights Reserved",
@@ -139,17 +140,23 @@
   },
   "sportBar": {
     "text1": "BAR 23 IS OPEN NOW.",
-    "p1": "Dear sports fans, if you want to spend time with your friends, loved ones, and colleagues in a fun and comfortable place, We present to you the BAR 23 sports bar located in Food City. ",
-    "p2": "When you come to BAR 23 sports bar:",
-    "txt1": "- Shopping mall",
+    "p1": "Dear sports fans, if you want to spend time with your friends, loved ones, and colleagues in a fun, comfortable place, we present to you the BAR 23 sports bar located in 1st floor of Food City shopping mall.",
+    "txt1": "- Live streaming of all sports",
     "txt2": "- Electron Darts",
     "txt3": "- Pool, Billiard",
     "txt4": "- Electron Foosball",
     "txt5": "- Various Drinking Games",
-    "txt6": "- various cocktails",
+    "txt6": "- Various cocktails",
     "txt7": "- Delicious food from the chef",
-    "txt8": "- All these services are available under one roof.",
-    "location": "Location: 1st floor of Food City shopping center",
-    "contact": "Contact phone number: 7608 11"
+    "location": "Location: 1st Floor of Food City shopping mall.",
+    "contact": "Contact phone number: ",
+    "time": "Timetable: 12:00 - 02:00"
+  },
+  "fatpot": {
+    "text1": "“FAT POT” hot pot restaurant is the official franchise of Chinese “Shouxing” hot pot restaurant in Mongolia , which is famous for its health soup. Unlike ordinary hot pot soup, FAT POT is characterized by the presence of healthy ingredients and medicinal herbs.",
+    "text2": "A team led by a professional chef prepares seven types of soups including bone broth, tomato soup, pepper soup, spicy soup and mushroom soup with healthy ingredients. It has a sober and comfortable hall with a capacity of 188 customers and seven VIP rooms.",
+    "address": "Loctaion: “Food City” Shopping mall 4th Floor",
+    "phone": "Contact phone number: ",
+    "time": "Timetable: 11:00-00:00"
   }
 }
