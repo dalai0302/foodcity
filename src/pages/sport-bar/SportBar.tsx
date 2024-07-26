@@ -84,13 +84,21 @@ const SportBar = () => {
                   <li>
                     <b>{t("sportBar.time")}</b>
                   </li>
-                  <p className="text-white">
-                    <b className="mr-2">{t("action.fbLink")}</b>{" "}
+                  <p className="text-white flex gap-2 items-center">
+                    <span className="text-white font-semibold text-base">
+                      {t("action.socialLink")}
+                    </span>
                     <a
                       target="_blank"
                       href="https://www.facebook.com/bar23sports"
                     >
                       <i className="fa fa-facebook text-white before:text-2xl"></i>
+                    </a>
+                    <a
+                      target="_blank"
+                      href="https://www.instagram.com/bar23fc/"
+                    >
+                      <i className="fa fa-instagram text-white before:text-2xl"></i>
                     </a>
                   </p>
                 </ul>

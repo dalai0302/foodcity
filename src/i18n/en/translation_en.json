@@ -43,7 +43,8 @@
     "workplace": "workplace",
     "complex": "complex center",
     "shopping": "shopping center",
-    "comingSoon": "Coming soon ..."
+    "comingSoon": "Coming soon ...",
+    "socialLink": "Social link: "
   },
   "footer": {
     "copyRight": "Copyright © 2024 FOODCITY.MN. All Rights Reserved",
@@ -158,5 +159,25 @@
     "address": "Loctaion: “Food City” Shopping mall 4th Floor",
     "phone": "Contact phone number: ",
     "time": "Timetable: 11:00-00:00"
+  },
+  "fcMeat": {
+    "text1": "We are working to deliver healthy, high-quality, fresh meat and meat products that are sterilized and vacuum-packed in your hands from herdsmen. Food City Meat has a total of 43 types, 14 types of lamb, 21 types of beef, and 8 types of beef steak. Sterilized and vacuum-sealed products have a reliable shelf life of 180 days at 2C and 270 days at -18C.",
+    "address": "Location: 3rd floor of Food City Shopping mall",
+    "contact": "Contact: "
+  },
+  "brandCategory": {
+    "амьтны хоол, дагалдах хэрэгсэл": "Pet food and accessories",
+    "Аяллын хэрэгсэл": "Outdoor Store",
+    "Бичиг хэрэг": "Stationery Store",
+    "Бэлэн хувцас": "Clothing Store",
+    "Гоо сайхан": "Beauty",
+    "Гоёл чимэглэл": "Accessories",
+    "Гэр ахуйн дэлгүүр": "Household Store",
+    "Зайрмаг": "Ice Cream Store",
+    "Кофе, Байкери": "Coffe shop, Bakery",
+    "Хараа зүй, Нүдний шил, Линз": "Glasses, lenses",
+    "Эмийн сан": "Pharmacy",
+    "Үйлчилгээ": "Service",
+    "Конвиниенс": "Convenient Store"
   }
 }

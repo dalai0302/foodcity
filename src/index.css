@@ -146,7 +146,7 @@ html {
 }
 
 .select {
-  width: 300px;
+  width: 350px;
   height: 40px;
   padding: 0 16px;
   /* border-radius: 6px; */
@@ -176,7 +176,7 @@ html {
   user-select: none;
   top: 50px;
   left: 0;
-  width: 300px;
+  width:350px;
   max-height: 200px;
   overflow-y: scroll;
   padding: 8px 8px 8px 8px;
@@ -187,7 +187,8 @@ html {
     margin-top: 8px;
   }
   li {
-    height: 32px;
+    height: auto;
+    min-height: 32px;
     font-size: 14px;
     font-stretch: narrower;
     list-style: none;

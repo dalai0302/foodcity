@@ -9,8 +9,8 @@ const FcMeat = () => {
   return (
     <>
       <section className="!p-0 ">
-        <div className="flex min-h-[500px] flex-col text-black">
-          {/* <div className="md:w-[52%] w-full">
+        <div className="flex min-h-[500px] flex-row text-black">
+          <div className="md:w-[52%] w-full">
             <Swiper
               className=""
               spaceBetween={30}
@@ -28,7 +28,7 @@ const FcMeat = () => {
               <SwiperSlide>
                 <img
                   className="w-full h-[300px] md:h-[600px] object-contain"
-                  src={window.location.origin + "/img/bg_meat.jpg"}
+                  src={window.location.origin + "/img/fcmeat/fcmeat.jpg"}
                 />
               </SwiperSlide>
             </Swiper>
@@ -39,43 +39,36 @@ const FcMeat = () => {
                 Food city Meat
               </h2>
               <p className="text-white font-semibold text-base">
-                Хүнсний эрүүл ахуй, аюулгүй байдлын стандартыг бүрэн хангасан
-                орчинд гарал үүсэл нь баталгаажсан, үйлдвэрийн аргаар бэлтгэсэн,
-                хэрэглэгчийн хэрэгцээ шаардлагад нийцсэн бүх төрлийн мах, махан
-                бүтээгдэхүүнийг зах зээлийн бодит үнээр борлуулах боломжийг
-                малчид, үйлдвэрлэгч, импортлогч иргэн, аж ахуйн нэгжид олгож
-                байна.
-                <br />
-                <ul className="">
-                  “Фүүд сити” төвийн махны төрөлжсөг тасаг нь дараахь стандартыг
-                  хангасан.
-                  <br />
-                  1. Мах хүлээн авч сэврээх, ангилах, савлах өрөөтэй.
-                  <br />
-                  2. Махыг гүн хөлдөөх, хадгалах хүйтэн агуулах зоорьтой. /300
-                  тн мах /
-                  <br />
-                  3. Мах, махан бүтээгдэхүүнд шинжилгээ хийх хүнсний
-                  итгэмжлэгдсэн лабораторитай.
-                  <br />
-                  4. Худалдааны талбай бүрийг халуун, хүйтэн цэвэр ус, бохир ус,
-                  тос барих системд холбосон.
-                  <br />
-                  5. Худалдааны талбай, хүйтэн агуулахад нян бактер устгах ион
-                  гэрэл суурилуулсан.
-                  <br />
-                  6. Барилгын үндсэн агаар сэлгэлт, хөргөлт, камержуулалт,
-                  холбоо дохиолол, галын систем нь хүнсний худалдааны төвийн
-                  стандартад нийцсэн.
-                  <br />
-                  7. Төвийн хэмжээнд ачааны лифт, дулаан зогсоол, гадна
-                  зогсоолыг төлөвлөсөн.
-                </ul>
+                {t("fcMeat.text1")}
+              </p>
+              <p className="text-white font-semibold text-base">
+                {t("fcMeat.address")}
+              </p>
+              <p className="text-white font-semibold text-base">
+                {t("fcMeat.contact")}{" "}
+                <a
+                  className="text-white font-semibold text-base"
+                  href="tel:+97676112223"
+                >
+                  76112223
+                </a>
+              </p>
+              <p className="text-white items-center flex gap-2">
+                <span className="text-white font-semibold text-base">
+                  {t("action.socialLink")}
+                </span>
+                <a target="_blank" href="https://www.facebook.com/foodcitymeat">
+                  <i className="fa fa-facebook text-white before:text-2xl"></i>
+                </a>
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/foodcitymeat"
+                >
+                  <i className="fa fa-instagram text-white before:text-2xl"></i>
+                </a>
               </p>
             </div>
-          </div> */}
-          <h2 className="text-center mt-auto mx-auto">Food city Meat</h2>
-          <h2 className="text-center mx-auto my-auto">{t("action.comingSoon")}</h2>
+          </div>
         </div>
       </section>
       {/* <section className="!p-[40px]">

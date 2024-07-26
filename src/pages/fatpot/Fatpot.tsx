@@ -52,18 +52,34 @@ const Fatpot = () => {
                     <b>{t("fatpot.address")}</b>
                   </li>
                   <li>
-                    <b>{t("fatpot.phone")} <a className="text-white font-semibold text-base" href="tel:+97677661133">7766 1133</a></b>
+                    <b>
+                      {t("fatpot.phone")}{" "}
+                      <a
+                        className="text-white font-semibold text-base"
+                        href="tel:+97677661133"
+                      >
+                        7766 1133
+                      </a>
+                    </b>
                   </li>
                   <li>
                     <b>{t("fatpot.time")}</b>
                   </li>
-                  <p className="text-white">
-                    <b className="mr-2">{t("action.fbLink")}</b>{" "}
+                  <p className="text-white flex gap-2 items-center">
+                    <span className="text-white font-semibold text-base">
+                      {t("action.socialLink")}
+                    </span>
                     <a
                       target="_blank"
                       href="https://www.facebook.com/fatpotfoodcity"
                     >
                       <i className="fa fa-facebook text-white before:text-2xl"></i>
+                    </a>
+                    <a
+                      target="_blank"
+                      href="https://www.instagram.com/fatpot_hotpot"
+                    >
+                      <i className="fa fa-instagram text-white before:text-2xl"></i>
                     </a>
                   </p>
                 </ul>

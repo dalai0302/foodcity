@@ -184,7 +184,7 @@ const Home = () => {
                         })
                       }
                     >
-                      {option.name}
+                      {t(`brandCategory.${option.name}`)}
                     </li>
                   ))}
                 </ul>

@@ -179,9 +179,14 @@ const Entertaiment = () => {
               <p className="text-white text-lg uppercase">
                 {t("action.openingHours")}: {t("action.everyDay")} 11.00 - 20.00
               </p>
-              <p className="text-white">
-                <b className="mr-2">{t("action.fbLink")}</b>{" "}
-                <a target="_blank" href="https://www.facebook.com/happylandfoodcity">
+              <p className="text-white flex items-center gap-2">
+                <span className="text-white font-semibold text-base">
+                  {t("action.socialLink")}
+                </span>
+                <a
+                  target="_blank"
+                  href="https://www.facebook.com/happylandfoodcity"
+                >
                   <i className="fa fa-facebook text-white before:text-2xl"></i>
                 </a>
               </p>
