@@ -28,7 +28,7 @@ const FcMeat = () => {
               <SwiperSlide>
                 <img
                   className="w-full h-[300px] md:h-[600px] object-contain"
-                  src={window.location.origin + "/img/fcmeat/fcmeat.jpg"}
+                  src={window.location.origin + "/img/fcmeat/1.jpg"}
                 />
               </SwiperSlide>
             </Swiper>

@@ -166,18 +166,21 @@
     "contact": "Contact: "
   },
   "brandCategory": {
-    "амьтны хоол, дагалдах хэрэгсэл": "Pet food and accessories",
-    "Аяллын хэрэгсэл": "Outdoor Store",
-    "Бичиг хэрэг": "Stationery Store",
-    "Бэлэн хувцас": "Clothing Store",
-    "Гоо сайхан": "Beauty",
-    "Гоёл чимэглэл": "Accessories",
-    "Гэр ахуйн дэлгүүр": "Household Store",
-    "Зайрмаг": "Ice Cream Store",
-    "Кофе, Байкери": "Coffe shop, Bakery",
-    "Хараа зүй, Нүдний шил, Линз": "Glasses, lenses",
-    "Эмийн сан": "Pharmacy",
-    "Үйлчилгээ": "Service",
-    "Конвиниенс": "Convenient Store"
+    "petFood": "Pet food and accessories",
+    "outdoorStore": "Outdoor Store",
+    "foodRestaurant": "Food, restaurant",
+    "food": "Food",
+    "stationeryStore": "Stationery Store",
+    "clothingStore": "Clothing Store",
+    "beauty": "Beauty",
+    "accessories": "Accessories",
+    "householdStore": "Household Store",
+    "iceCream": "Ice Cream Store",
+    "coffeeBakery": "Coffee shop, Bakery",
+    "glasses": "Glasses, lenses",
+    "kidsToyClothes": "Kids toy, clothes",
+    "pharmacy": "Pharmacy",
+    "service": "Service",
+    "convenientStore": "Convenient Store"
   }
 }

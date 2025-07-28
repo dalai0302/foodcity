@@ -103,6 +103,7 @@ const Fatpot = () => {
               //   loop
               autoPlay
               controls
+              playsInline 
               muted
               className="absolute z-10 w-full h-[250px] mt-8 rounded-xl md:h-[600px] object-cover max-w-none"
             >

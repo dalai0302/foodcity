@@ -122,6 +122,7 @@ const SportBar = () => {
               //   loop
               autoPlay
               controls
+              playsInline 
               muted
               className="absolute z-10 w-auto min-w-full min-h-full max-w-none"
             >

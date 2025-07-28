@@ -168,25 +168,332 @@ const Home = () => {
                   >
                     {t("label.allCategory")}
                   </li>
-                  {options.map((option, index) => (
-                    <li
-                      key={index}
-                      className={clsx(
-                        selectedOption.name === `${option.name}`
-                          ? "active-option"
-                          : null,
-                        "text-left"
-                      )}
-                      onClick={() =>
-                        setSelectedOption({
-                          name: `${option.name}`,
-                          id: `${option.id}`,
-                        })
-                      }
-                    >
-                      {t(`brandCategory.${option.name}`)}
-                    </li>
-                  ))}
+                  {options.map((option, index) => {
+                    // return (
+                    switch (option.name) {
+                      case "Хоол, Ресторан":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.foodRestaurant`)}
+                          </li>
+                        );
+                      case "Хүнс":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.food`)}
+                          </li>
+                        );
+                      case "Хараа зүй, нүдний шил, линз":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.glasses`)}
+                          </li>
+                        );
+                      case "Үйлчилгээ":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.service`)}
+                          </li>
+                        );
+                      case "Бичиг хэрэг":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.stationeryStore`)}
+                          </li>
+                        );
+                      case "Зайрмаг":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.iceCream`)}
+                          </li>
+                        );
+                      case "Гэр ахуй":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.householdStore`)}
+                          </li>
+                        );
+                      case "Гоо сайхан":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.beauty`)}
+                          </li>
+                        );
+                      case "Бэлэн хувцас":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.clothingStore`)}
+                          </li>
+                        );
+                      case "Хүүхдийн хувцас, Тоглоом":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.kidsToyClothes`)}
+                          </li>
+                        );
+                      case "Кофе, Байкери":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.coffeeBakery`)}
+                          </li>
+                        );
+                      case "Аяллын хэрэгсэл":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.outdoorStore`)}
+                          </li>
+                        );
+                      case "Эмийн сан":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.pharmacy`)}
+                          </li>
+                        );
+                      case "Гоёл чимэглэл":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.accessories`)}
+                          </li>
+                        );
+                      case "Амьтны хоол, дагалдах хэрэгсэл":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.petFood`)}
+                          </li>
+                        );
+                      case "Конвиниенс":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.convenientStore`)}
+                          </li>
+                        );
+                    }
+                    // )
+                  })}
                 </ul>
               </div>
             )}
@@ -325,12 +632,12 @@ const Home = () => {
           // light="https://i.stack.imgur.com/zw9Iz.png"
         /> */}
         <div className="relative flex items-center justify-center w-full h-[600px] overflow-hidden">
-          <div className="relative z-30 p-5 text-2xl text-white w-full h-full bg-black  bg-opacity-50 opacity-35"></div>
+          {/* <div className="relative z-30 p-5 text-2xl text-white w-full h-full bg-black  bg-opacity-50 opacity-35"></div> */}
           <video
-            // autoplay={true}
             autoPlay
-            loop
-            // controls
+            controls
+            playsInline 
+            style={{ width: '100%', height: 'auto' }}
             muted
             className="absolute z-10 w-auto min-w-full min-h-full max-w-none"
           >
