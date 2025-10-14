@@ -1,13 +1,14 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import bg from "../../assets/images/foodcity.jpg";
-import txture from "../../assets/images/texture.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+// Use images from public/img to avoid bundling import errors
+const bg = window.location.origin + "/img/bg2.jpg";
+const txture = window.location.origin + "/img/bg1.jpg";
 const About = () => {
   const { t } = useTranslation("global");
 

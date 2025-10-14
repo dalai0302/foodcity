@@ -1,42 +1,41 @@
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { t } from "i18next";
-import React from "react";
+import React, { useState } from "react";
 import ReactCountryFlag from "react-country-flag";
 // import ReactCountryFlag from "react-country-flag";
 import { useTranslation } from "react-i18next";
 
 const LanguageSelector = () => {
   const { t, i18n } = useTranslation();
-
-  const changeLanguage = (e: any) => {
-    const selectedLanguage = e.target.value;
-    i18n.changeLanguage(selectedLanguage);
+  const changeLanguage = (val: string) => {
+    // const selectedLanguage = e.target.value;
+    i18n.changeLanguage(val);
   };
 
   return (
-    <div className="inline-block relative">
-      <select
-        onChange={changeLanguage}
-        className="block appearance-none w-full bg-white text-black border border-gray-400 hover:border-gray-500 px-4 py-2 shadow leading-tight focus:outline-none focus:shadow-outline"
-      >
-        <option value="mn">
-          <ReactCountryFlag
-            countryCode="MN"
-            svg
-            style={{ marginRight: "8px" }}
-          />
+    <div className="inline-block relative cursor-pointer ">
+      <div className="flex gap-2 flex-row">
+        <div
+          className="flex gap-1 font-semibold text-black uppercase"
+          onClick={() => {
+            changeLanguage("mn");
+          }}
+        >
+          <ReactCountryFlag className="!w-6 !h-6" countryCode="MN" svg />
           {/* {t("language.mongolian")} */}
-          MN
-        </option>
-        <option value="en">
-          <ReactCountryFlag
-            countryCode="GB"
-            svg
-            style={{ marginRight: "8px" }}
-          />
+          мн
+        </div>
+        <div
+          className="flex gap-1 font-semibold text-black uppercase"
+          onClick={() => {
+            changeLanguage("en");
+          }}
+        >
+          <ReactCountryFlag className="!w-6 !h-6" countryCode="GB" svg />
           {/* {t("language.english")} */}
-          EN
-        </option>
-      </select>
+          en
+        </div>
+      </div>
     </div>
   );
 };

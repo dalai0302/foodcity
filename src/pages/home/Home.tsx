@@ -34,7 +34,8 @@ import ReactPlayer from "react-player";
 import clsx from "clsx";
 import ReactCountryFlag from "react-country-flag";
 import { BrandCategoryResponseDto } from "../../model/BrandCategoryResponseDto";
-import bg from "../../assets/images/image17177290490.jpg";
+// Use public image to avoid missing import errors
+const bg = window.location.origin + "/img/bg1.jpg";
 
 const Home = () => {
   const { t } = useTranslation("global");
@@ -168,25 +169,332 @@ const Home = () => {
                   >
                     {t("label.allCategory")}
                   </li>
-                  {options.map((option, index) => (
-                    <li
-                      key={index}
-                      className={clsx(
-                        selectedOption.name === `${option.name}`
-                          ? "active-option"
-                          : null,
-                        "text-left"
-                      )}
-                      onClick={() =>
-                        setSelectedOption({
-                          name: `${option.name}`,
-                          id: `${option.id}`,
-                        })
-                      }
-                    >
-                      {option.name}
-                    </li>
-                  ))}
+                  {options.map((option, index) => {
+                    // return (
+                    switch (option.name) {
+                      case "Хоол, Ресторан":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.foodRestaurant`)}
+                          </li>
+                        );
+                      case "Хүнс":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.food`)}
+                          </li>
+                        );
+                      case "Хараа зүй, нүдний шил, линз":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.glasses`)}
+                          </li>
+                        );
+                      case "Үйлчилгээ":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.service`)}
+                          </li>
+                        );
+                      case "Бичиг хэрэг":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.stationeryStore`)}
+                          </li>
+                        );
+                      case "Зайрмаг":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.iceCream`)}
+                          </li>
+                        );
+                      case "Гэр ахуй":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.householdStore`)}
+                          </li>
+                        );
+                      case "Гоо сайхан":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.beauty`)}
+                          </li>
+                        );
+                      case "Бэлэн хувцас":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.clothingStore`)}
+                          </li>
+                        );
+                      case "Хүүхдийн хувцас, Тоглоом":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.kidsToyClothes`)}
+                          </li>
+                        );
+                      case "Кофе, Байкери":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.coffeeBakery`)}
+                          </li>
+                        );
+                      case "Аяллын хэрэгсэл":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.outdoorStore`)}
+                          </li>
+                        );
+                      case "Эмийн сан":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.pharmacy`)}
+                          </li>
+                        );
+                      case "Гоёл чимэглэл":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.accessories`)}
+                          </li>
+                        );
+                      case "Амьтны хоол, дагалдах хэрэгсэл":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.petFood`)}
+                          </li>
+                        );
+                      case "Конвиниенс":
+                        return (
+                          <li
+                            key={index}
+                            className={clsx(
+                              selectedOption.name === `${option.name}`
+                                ? "active-option"
+                                : null,
+                              "text-left"
+                            )}
+                            onClick={() =>
+                              setSelectedOption({
+                                name: `${option.name}`,
+                                id: `${option.id}`,
+                              })
+                            }
+                          >
+                            {t(`brandCategory.convenientStore`)}
+                          </li>
+                        );
+                    }
+                    // )
+                  })}
                 </ul>
               </div>
             )}
@@ -226,7 +534,7 @@ const Home = () => {
               <a href="https://www.facebook.com/bar23sports" target="_blank">
                 <img
                   className="w-full h-[250px] md:h-[600px] object-cover"
-                  src={window.location.origin + "/img/bar23.png"}
+                  src={window.location.origin + "/img/sportbar/bg.jpg"}
                 />
               </a>
             </SwiperSlide>
@@ -242,10 +550,7 @@ const Home = () => {
               </a>
             </SwiperSlide>
             <SwiperSlide>
-              <a
-                href="https://www.facebook.com/HighStr"
-                target="_blank"
-              >
+              <a href="https://www.facebook.com/HighStr" target="_blank">
                 <img
                   className="w-full h-[250px] md:h-[600px] object-cover"
                   src={window.location.origin + "/img/high_street.jpg"}
@@ -253,10 +558,7 @@ const Home = () => {
               </a>
             </SwiperSlide>
             <SwiperSlide>
-              <a
-                href="https://www.facebook.com/lensgallery.mn"
-                target="_blank"
-              >
+              <a href="https://www.facebook.com/lensgallery.mn" target="_blank">
                 <img
                   className="w-full h-[250px] md:h-[600px] object-cover"
                   src={window.location.origin + "/img/lens.jpg"}
@@ -331,12 +633,12 @@ const Home = () => {
           // light="https://i.stack.imgur.com/zw9Iz.png"
         /> */}
         <div className="relative flex items-center justify-center w-full h-[600px] overflow-hidden">
-          <div className="relative z-30 p-5 text-2xl text-white w-full h-full bg-black  bg-opacity-50 opacity-35"></div>
+          {/* <div className="relative z-30 p-5 text-2xl text-white w-full h-full bg-black  bg-opacity-50 opacity-35"></div> */}
           <video
-            // autoplay={true}
             autoPlay
-            loop
-            // controls
+            controls
+            playsInline 
+            style={{ width: '100%', height: 'auto' }}
             muted
             className="absolute z-10 w-auto min-w-full min-h-full max-w-none"
           >
@@ -362,10 +664,11 @@ const Home = () => {
               className="col-md-4 col-sm-4 wow fadeInUp"
               data-wow-duration="300ms"
             >
-              <a
+              {/* <a
                 href="https://www.facebook.com/events/1704397849969088?ref=newsfeed"
                 target="_blank"
-              >
+              > */}
+              <Link to={"/event"}>
                 <div className="blog-post">
                   <div className="blog-post-images rounded-xl mb-4">
                     <img
@@ -380,16 +683,18 @@ const Home = () => {
                     </span>
                   </div>
                 </div>
-              </a>
+              </Link>
+              {/* </a> */}
             </div>
             <div
               className="col-md-4 col-sm-4 wow fadeInUp"
               data-wow-duration="300ms"
             >
-              <a
+              {/* <a
                 href="https://www.facebook.com/photo/?fbid=122206960058003255&set=a.122137618106003255"
                 target="_blank"
-              >
+              > */}
+              <Link to={"/event"}>
                 <div className="blog-post">
                   <div className="blog-post-images rounded-xl mb-4">
                     <img
@@ -402,16 +707,18 @@ const Home = () => {
                     <span className="post-title !m-0">FOOD EVENT MART 8</span>
                   </div>
                 </div>
-              </a>
+              </Link>
+              {/* </a> */}
             </div>
             <div
               className="col-md-4 col-sm-4 wow fadeInUp"
               data-wow-duration="300ms"
             >
-              <a
+              {/* <a
                 href="https://www.facebook.com/photo/?fbid=760003072921092&set=pcb.759992989588767"
                 target="_blank"
-              >
+              > */}
+              <Link to={"/event"}>
                 <div className="blog-post">
                   <div className="blog-post-images rounded-xl mb-4">
                     <img
@@ -424,7 +731,8 @@ const Home = () => {
                     <span className="post-title !m-0">АЛТАН НАМАР 2022</span>
                   </div>
                 </div>
-              </a>
+              </Link>
+              {/* </a> */}
             </div>
           </div>
           <div className="row">
@@ -451,26 +759,19 @@ const Home = () => {
           <div className="row text-black">
             <div className="col-md-6 col-sm-12 sm-margin-bottom-ten text-left md:text-center">
               <h3 className="title-med no-padding-bottom letter-spacing-2 text-left">
-                Биднийг сонгох шалтгаан
+                {t("action.choose")}
               </h3>
-              <p className="text-med margin-five font-medium">
+              <div className="text-med margin-five font-medium">
                 <ul>
-                  <p className="m-0">
-                    - Нэгдсэн камерийн хяналт, холбоо дохиолол, галын системтэй.
-                  </p>
-                  <p className="m-0">- Хүнсний агуулах, хүйтэн зоорьтой.</p>
-                  <p className="m-0">- Хүнсний итгэмжлэгдсэн лабораторитой.</p>
-                  <p className="m-0">- Төв зам дагуу байрлалтай.</p>
-                  <p className="m-0">- 24 цагийн харуул, хамгаалалттай.</p>
-                  <p className="m-0">
-                    - Цэвэр агаар шүүх, ашиг, бохир агаар зайлуулах, агаар
-                    боловсруулах ЕВРО төхөөрөмжөөр тоноглогдсон.
-                  </p>
-                  <p className="m-0">
-                    - Нэгдсэн оффис, үйлчилгээг хялбараар эрхэлдэг.
-                  </p>
+                  <li className="m-0">{t("paragraph.choose1")}</li>
+                  <li className="m-0">{t("paragraph.choose2")}</li>
+                  <li className="m-0">{t("paragraph.choose3")}</li>
+                  <li className="m-0">{t("paragraph.choose4")}</li>
+                  <li className="m-0">{t("paragraph.choose5")}</li>
+                  <li className="m-0">{t("paragraph.choose6")}</li>
+                  <li className="m-0">{t("paragraph.choose7")}</li>
                 </ul>
-              </p>
+              </div>
               <div className="text-left mb-4">
                 <Link
                   to={"/advantage"}
@@ -488,7 +789,7 @@ const Home = () => {
                   300+
                 </h1>
                 <p className="text-uppercase black-text letter-spacing-2 text-small margin-three">
-                  ажлын байр
+                  {t("action.workplace")}
                 </p>
               </div>
               <div className="col-md-2 col-sm-4 text-center margin-three xs-margin-bottom-ten">
@@ -497,7 +798,7 @@ const Home = () => {
                   30000 <span className="text-sm">м2</span>
                 </h1>
                 <p className="text-uppercase black-text letter-spacing-2 text-small margin-three">
-                  цогцолбор төв
+                  {t("action.complex")}
                 </p>
               </div>
               <div className="col-md-2 col-sm-4 text-center margin-three">
@@ -506,7 +807,7 @@ const Home = () => {
                   140+
                 </h1>
                 <p className="text-uppercase black-text letter-spacing-2 text-small margin-three">
-                  Худалдаа үйлчилгээ
+                  {t("action.shopping")}
                 </p>
               </div>
             </div>
@@ -526,11 +827,7 @@ const Home = () => {
           </div>
           <div className="row">
             <div className="col-md-3 col-sm-6 text-center sm-margin-bottom-ten">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.facebook.com/fatpotfoodcity"
-              >
+              <Link to={"/service/fatpot"}>
                 <img
                   className=" h-[265px] w-full sm:w-[265px] bg-white rounded-xl object-contain"
                   alt=""
@@ -539,14 +836,10 @@ const Home = () => {
                 <h5 className="margin-ten no-margin-bottom xs-margin-top-five post-title">
                   {t("brand.fatpot")}
                 </h5>
-              </a>
+              </Link>
             </div>
             <div className="col-md-3 col-sm-6 text-center sm-margin-bottom-ten">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.facebook.com/happylandfoodcity"
-              >
+              <Link to={"/entertainment"}>
                 <img
                   className="w-full sm:w-[265px] bg-white rounded-xl h-[265px] object-contain"
                   alt=""
@@ -555,14 +848,10 @@ const Home = () => {
                 <h5 className="margin-ten no-margin-bottom xs-margin-top-five post-title">
                   {t("brand.happyLand")}
                 </h5>
-              </a>
+              </Link>
             </div>
             <div className="col-md-3 col-sm-6 text-center xs-margin-bottom-ten ">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.facebook.com/bar23sports"
-              >
+              <Link to={"/service/bar23"}>
                 <img
                   className="w-full sm:w-[265px] bg-white rounded-xl h-[265px] object-contain"
                   alt=""
@@ -571,14 +860,10 @@ const Home = () => {
                 <h5 className="margin-ten no-margin-bottom xs-margin-top-five post-title">
                   {t("brand.bar23")}
                 </h5>
-              </a>
+              </Link>
             </div>
             <div className="col-md-3 col-sm-6 text-center">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.facebook.com/FoodCityMall"
-              >
+              <Link to={"/service/fc-meat"}>
                 <img
                   className="w-full sm:w-[265px] bg-white rounded-xl h-[265px] object-contain"
                   alt=""
@@ -587,7 +872,7 @@ const Home = () => {
                 <h5 className="margin-ten no-margin-bottom xs-margin-top-five post-title">
                   {t("brand.foodcityMeat")}
                 </h5>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

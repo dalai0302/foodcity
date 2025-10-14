@@ -779,8 +779,8 @@ footer ul.list-inline li:first-child {padding-left: 6px}
 .scroll-down{ bottom: 50px; position: absolute; text-align: center; width: 100%; z-index: 10}
 .scroll-down a i { background: #fff; border-radius: 2px; font-size: 17px; padding: 2px 6px; color: #000; }
 .scroll-down a i:hover { background:#000; color: #fff  }
-.scroll-to-down { cursor:url("../images/arrow-down.png"), pointer;}
-.scroll-to-down-white { cursor:url("../images/arrow-down-white.png"), pointer;}
+.scroll-to-down { cursor: pointer;}
+.scroll-to-down-white { cursor: pointer;}
 .background-slider-text { position: absolute; width: 100%}
 #owl-demo-background .owl-item  { cursor: default !important}
 
@@ -1238,7 +1238,7 @@ footer ul.list-inline li:first-child {padding-left: 6px}
 .grid figure:hover .gallery-img {background-color:#000; }
 .no-hover figure:hover .gallery-img {background-color: transparent !important; }
 .no-hover figure:hover img { opacity: 1 !important; -ms-transform: none; -webkit-transform: none;  transform: none; }
-figure:hover img { -ms-transform: scale(1.1,1.1); -webkit-transform: scale(1.1,1.1);  transform: scale(1.1,1.1); transition: all .3s ease; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; opacity:0.15;  cursor:url("../images/icon-zoom-white.png"), pointer; }
+figure:hover img { -ms-transform: scale(1.1,1.1); -webkit-transform: scale(1.1,1.1);  transform: scale(1.1,1.1); transition: all .3s ease; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; opacity:0.15;  cursor: pointer; }
 .mfp-figure figure:hover img { cursor: pointer}
 .grid figure:hover figcaption { opacity: 1; transition: all .3s ease; -webkit-transition: all .3s ease; -moz-transition: all .3s ease;}
 
@@ -1279,7 +1279,7 @@ figure:hover img { -ms-transform: scale(1.1,1.1); -webkit-transform: scale(1.1,1
 .work-with-title .grid figcaption h3 a { display: block}
 .work-with-title .grid li:hover figcaption h3, .work-with-title .grid li:hover figcaption h3 a{color: #000 }
 .work-with-title .grid li:hover figcaption { bottom: 50px;}
-.work-with-title figure:hover img {opacity: 1; -ms-transform: none; -webkit-transform: none;  transform: none; transition:.1s; -webkit-transition: .1s; -moz-transition:.1s; opacity:.5; cursor:url("../images/icon-zoom-white.png"), pointer;}
+.work-with-title figure:hover img {opacity: 1; -ms-transform: none; -webkit-transform: none;  transform: none; transition:.1s; -webkit-transition: .1s; -moz-transition:.1s; opacity:.5; cursor: pointer;}
 .work-with-title .gallery-img { }
 
 /* portfolio grid - wide */
@@ -1513,7 +1513,7 @@ figure:hover img { -ms-transform: scale(1.1,1.1); -webkit-transform: scale(1.1,1
 .med-input.select-style select { padding: 14px 15px}
 .med-input.select-style { margin:0 0 20px }
 
-.select-style { padding: 0; margin: 0; border: 1px solid #ccc; width: 100%; overflow: hidden; background-color: #fff; margin: 0 0 40px;  background: #fff url("../images/select-arrow.png") no-repeat 97% 50%; }
+.select-style { padding: 0; margin: 0; border: 1px solid #ccc; width: 100%; overflow: hidden; background-color: #fff; margin: 0 0 40px; }
 .select-style select { padding: 16px 15px; width: 100%; border: none; box-shadow: none; background-color: transparent; background-image: none; -webkit-appearance: none; -moz-appearance: none; appearance: none;  cursor: pointer; font-size:11px; text-transform: uppercase; letter-spacing:1px; margin-bottom:0; color:#999999 }
 .select-style select:focus { outline: none; border: none; box-shadow: none }
 
@@ -1742,7 +1742,7 @@ ul.list-line li span {min-width:130px; display:inline-block}
 .price del { color:#898989; margin-right:10px; font-weight: 100}
 .home-product:hover .quick-buy { opacity:1; bottom: 44px;}
 .quick-buy { background-color:rgba(255,255,255,1); bottom: 44px; left: 0; opacity: 0; padding: 25px 0; position: absolute; width: 100%; }
-.home-product:hover img {transition: all .3s ease; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; -ms-transform: scale(1.1,1.1); -webkit-transform: scale(1.1,1.1);  transform: scale(1.1,1.1); cursor:url("../images/icon-zoom-white.png"), pointer;}
+.home-product:hover img {transition: all .3s ease; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; -ms-transform: scale(1.1,1.1); -webkit-transform: scale(1.1,1.1);  transform: scale(1.1,1.1); cursor: pointer;}
 .product-name{ position: relative; z-index: 1; }
 .quick-buy .quick-buy-btn i { margin:0; font-size:14px;}
 .quick-buy .btn { padding:5px 13px; margin:0}
@@ -1805,7 +1805,7 @@ ul.list-line li span {min-width:130px; display:inline-block}
 .size-details { margin-top: 10px;}
 .size-details li { width:33px}
 .size-chart { border: medium none !important; text-decoration: underline; text-transform: uppercase; width: 90px !important; }
-.shop-shorting-details  { background: #fff url("../images/select-arrow.png") no-repeat 81% 50%; margin:0 !important; width: 100% !important }
+.shop-shorting-details  { background: #fff; margin:0 !important; width: 100% !important }
 .product-share-deails i { margin: 7px 0 0 10px; font-size:14px; vertical-align: middle;}
 .shop-shorting-details select { line-height:15px; padding: 13px 15px 14px !important}
 .product-details-social i { font-size:14px; margin-right:20px; color:#000; vertical-align: middle;}
@@ -1825,7 +1825,7 @@ thead th.first { padding-left: 0 !important; }
 .cupon { display: inline-block; width: 100%; }
 .cupon .form-inline .btn { margin-left: 10px !important; padding-top: 9px; }
 .continue-shopping { margin-left: 15px !important; }
-.shop-shorting-cart  { background: #fff url("../images/select-arrow.png") no-repeat 81% 50%; margin:0 !important; width: 100% !important }
+.shop-shorting-cart  { background: #fff; margin:0 !important; width: 100% !important }
 
 /* checkout */
 .shop-cart .shop-shorting { width: 63px !important; }
@@ -2085,9 +2085,9 @@ thead th.first { padding-left: 0 !important; }
 .travel-booking .tab-style3 .nav-tabs li a {font-size:14px; letter-spacing:2px; line-height: 60px; padding:0 40px; background: #fff}
 .travel-booking input, .travel-booking input:focus {border:none; padding:7px 15px; height: 37px;}
 .travel-booking .select-style select {padding:6px 15px 9px 15px; border: none; height:37px}
-.travel-booking  .select-style { background: #fff url("../images/select-arrow.png") no-repeat right 10px top 50%; }
+.travel-booking  .select-style { background: #fff; }
 .travel-adventure img {opacity:.7}
-.travel-adventure:hover img  { opacity:.5; -webkit-transform: scale(1.2); -moz-transform: scale(1.2); -o-transform: scale(1.2); -ms-transform: scale(1.2); transform: scale(1.2); cursor:url("../images/icon-zoom-white.png"), pointer; }
+.travel-adventure:hover img  { opacity:.5; -webkit-transform: scale(1.2); -moz-transform: scale(1.2); -o-transform: scale(1.2); -ms-transform: scale(1.2); transform: scale(1.2); cursor: pointer; }
 .travel-adventure figure { position:absolute; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); left: 0; z-index:3; width:100%; top:50%;}
 .travel-adventure a {display:block; position:relative; z-index:2}
 .special-offers {min-height:378px}

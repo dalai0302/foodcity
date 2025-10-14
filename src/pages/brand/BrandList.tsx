@@ -156,7 +156,7 @@ const BrandList = () => {
   const RenderCard = (item: MergedType) => {
     if (item.name == "Хүнс") {
       return (
-        <Link to={`/shop/${item.id}`}>
+        <Link to={`/stores/${item.id}`}>
           <img
             src={`${URL_BACKEND_CATEGORY_FILE}/${item.logoMd}`}
             alt=""
@@ -224,7 +224,7 @@ const BrandList = () => {
           <div className="row">
             <div className="wow fadeInUp pb-8" data-wow-duration="300ms">
               <h2 className="black-text md:text-left text-center md:mb-0 ">
-                {t("menu.shop")}
+                {t("menu.store")}
               </h2>
               {/* <span className="xs-display-none">
                 Lorem Ipsum is simply dummy text of the printing.
@@ -311,22 +311,31 @@ const BrandList = () => {
         <div className="container">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 lightbox-gallery items-center justify-items-center">
             {allListItem.map((item, idx) =>
-              menu === Floor.ALL ? (
+              item.name === "Fat Pot hot pot restaurant" ? (
+                <></>
+              ) : menu === item.level ? (
+                <div className=" w-full p-0 sm:w-full max-w-full h-full wow fadeIn cursor-pointer relative group bg-white border-[1px] border-[rgb(0 0 0 / 10%)]">
+                  {RenderCard(item)}
+                </div>
+              ) : menu === Floor.ALL ? (
                 <div
                   key={idx}
                   className=" w-full p-0 sm:w-full max-w-full h-full wow fadeIn cursor-pointer relative group bg-white border-[1px] border-[rgb(0 0 0 / 10%)]"
                 >
                   {RenderCard(item)}
                 </div>
-              ) : menu === item.level ? (
-                <div className=" w-full p-0 sm:w-full max-w-full h-full wow fadeIn cursor-pointer relative group bg-white border-[1px] border-[rgb(0 0 0 / 10%)]">
-                  {RenderCard(item)}
-                </div>
               ) : (
                 <></>
               )
             )}
-
+            {/* menu === Floor.ALL ? (
+                <div
+                  key={idx}
+                  className=" w-full p-0 sm:w-full max-w-full h-full wow fadeIn cursor-pointer relative group bg-white border-[1px] border-[rgb(0 0 0 / 10%)]"
+                >
+                  {RenderCard(item)}
+                </div>
+              ) */}
             {/* {
             dropdownItems.beans?.at(0)?.subCategories !== undefined &&
               dropdownItems.beans?.at(0)?.subCategories!.map((item, idx) =>

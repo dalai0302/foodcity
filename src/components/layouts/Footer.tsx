@@ -75,23 +75,28 @@ const Footer = () => {
           <div className="text-left flex flex-col sm:gap-0 gap-2">
             <h4 className="mb-6">{t("footer.menu")}</h4>
             <h5>
-              <Link className="text-white" to="/shop">
-                {t("footer.shop")}
+              <Link className="text-white" to="/stores">
+                {t("menu.store")}
               </Link>
             </h5>
             <h5>
-              <Link className="text-white" to="/brands">
-                {t("footer.brand")}
-              </Link>
-            </h5>
-            <h5>
-              <Link className="text-white" to="/guide">
-                {t("footer.guide")}
+              <Link className="text-white" to="/restaurant">
+                {t("menu.restaurant")}
               </Link>
             </h5>
             <h5>
               <Link className="text-white" to="/event">
-                {t("footer.event")}
+                {t("menu.event")}
+              </Link>
+            </h5>
+            <h5>
+              <Link className="text-white" to="/service">
+                {t("menu.service")}
+              </Link>
+            </h5>
+            <h5>
+              <Link className="text-white" to="/entertainment">
+                {t("menu.entertainment")}
               </Link>
             </h5>
           </div>
@@ -127,9 +132,7 @@ const Footer = () => {
             </div>
             <div className=" flex gap-3 mb-5">
               <i className="icon-clock w-5 small-icon before:text-xl white-text"></i>
-              <p>
-              {t("footer.timeTxt")} :
-              </p>
+              <p>{t("footer.timeTxt")} :</p>
               <h6 className="margin-two no-margin-bottom">
                 {t("footer.time")}
               </h6>
@@ -149,9 +152,17 @@ const Footer = () => {
         </div>
       </div>
 
-      <a href="javascript:;" className="scrollToTop">
+      {/* <a href="javascript:;" className="scrollToTop">
         <i className="fa fa-angle-up"></i>
-      </a>
+      </a> */}
+      <button
+        type="button"
+        className="scrollToTop"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        aria-label="Scroll to top"
+      >
+        <i className="fa fa-angle-up"></i>
+      </button>
     </footer>
   );
 };

@@ -1,5 +1,5 @@
 // export const URL_BACKEND_ROOT = `http://192.168.11.190:8096`; // dev
-export const URL_BACKEND_ROOT = `http://172.104.177.102:8096`; // Prod
+export const URL_BACKEND_ROOT = `http://202.131.1.29:8096`; // Prod
 export const URL_BACKEND_CATEGORY_TOP = `${URL_BACKEND_ROOT}/web/category/top`;
 export const URL_BACKEND_CATEGORY_FILE = `${URL_BACKEND_ROOT}/file`;
 export const URL_BACKEND_CATEGORY_SEARCH = `${URL_BACKEND_ROOT}/web/category/search`;
