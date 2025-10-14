@@ -22,7 +22,7 @@ html, body {
     z-index: 1000;
 }
 .menu-button::before {
-    background: rgba(0, 0, 0, 0) url("../images/pull-menu.png") no-repeat scroll center center;
+    background: none;
     bottom: 0.5em;
     content: "";
     left:-7px;
@@ -50,7 +50,7 @@ html, body {
     top: 0px;
 }  
 .menu-button-orange::before {
-    background: rgba(0, 0, 0, 0) url("../images/pull-menu-orange.png") repeat scroll center center;
+    background: none;
     bottom: 0.5em;
     content: "";
     left: 0.5em;
@@ -80,7 +80,7 @@ html, body {
     top: -7px;
 }  
 .menu-button-yellow::before {
-    background: rgba(0, 0, 0, 0) url("../images/pull-menu-yellow.png") repeat scroll center center;
+    background: none;
     bottom: 0.5em;
     content: "";
     left: 0.5em;

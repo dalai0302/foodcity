@@ -34,7 +34,8 @@ import ReactPlayer from "react-player";
 import clsx from "clsx";
 import ReactCountryFlag from "react-country-flag";
 import { BrandCategoryResponseDto } from "../../model/BrandCategoryResponseDto";
-import bg from "../../assets/images/foodcity_bg.jpg";
+// Use public image to avoid missing import errors
+const bg = window.location.origin + "/img/bg1.jpg";
 
 const Home = () => {
   const { t } = useTranslation("global");
@@ -760,17 +761,17 @@ const Home = () => {
               <h3 className="title-med no-padding-bottom letter-spacing-2 text-left">
                 {t("action.choose")}
               </h3>
-              <p className="text-med margin-five font-medium">
+              <div className="text-med margin-five font-medium">
                 <ul>
-                  <p className="m-0">{t("paragraph.choose1")}</p>
-                  <p className="m-0">{t("paragraph.choose2")}</p>
-                  <p className="m-0">{t("paragraph.choose3")}.</p>
-                  <p className="m-0">{t("paragraph.choose4")}</p>
-                  <p className="m-0">{t("paragraph.choose5")}</p>
-                  <p className="m-0">{t("paragraph.choose6")}</p>
-                  <p className="m-0">{t("paragraph.choose7")}</p>
+                  <li className="m-0">{t("paragraph.choose1")}</li>
+                  <li className="m-0">{t("paragraph.choose2")}</li>
+                  <li className="m-0">{t("paragraph.choose3")}</li>
+                  <li className="m-0">{t("paragraph.choose4")}</li>
+                  <li className="m-0">{t("paragraph.choose5")}</li>
+                  <li className="m-0">{t("paragraph.choose6")}</li>
+                  <li className="m-0">{t("paragraph.choose7")}</li>
                 </ul>
-              </p>
+              </div>
               <div className="text-left mb-4">
                 <Link
                   to={"/advantage"}

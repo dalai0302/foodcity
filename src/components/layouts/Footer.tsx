@@ -132,9 +132,7 @@ const Footer = () => {
             </div>
             <div className=" flex gap-3 mb-5">
               <i className="icon-clock w-5 small-icon before:text-xl white-text"></i>
-              <p>
-              {t("footer.timeTxt")} :
-              </p>
+              <p>{t("footer.timeTxt")} :</p>
               <h6 className="margin-two no-margin-bottom">
                 {t("footer.time")}
               </h6>
@@ -154,9 +152,17 @@ const Footer = () => {
         </div>
       </div>
 
-      <a href="javascript:;" className="scrollToTop">
+      {/* <a href="javascript:;" className="scrollToTop">
         <i className="fa fa-angle-up"></i>
-      </a>
+      </a> */}
+      <button
+        type="button"
+        className="scrollToTop"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        aria-label="Scroll to top"
+      >
+        <i className="fa fa-angle-up"></i>
+      </button>
     </footer>
   );
 };
